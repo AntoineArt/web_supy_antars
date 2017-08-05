@@ -1,5 +1,12 @@
-h1
-{
+@font-face {
+    font-family: 'Ubuntu-L';
+    src: url('police/Ubuntu-L.ttf');
+}
+
+.titre
+{	
+	font-family:'Ubuntu-L';
+	font-size: 2em;
     color: red;
 }
 
