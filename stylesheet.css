@@ -5,15 +5,15 @@
 
 body
 {
-    /*background-color: rgb(89, 204, 51);*/
+    background-color: rgb(89, 204, 51);
     /*background-image : url("images/wartz.jpeg");*/
     color: white;
 }
 
 .titre
 {
-	font-family:'Ubuntu-C';
-	font-size: 1.9em;
+		font-family:'Ubuntu-C';
+		font-size: 1.9em;
     color: rgb(255, 115, 30);
 
     text-decoration: none;
