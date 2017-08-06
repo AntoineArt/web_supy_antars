@@ -3,11 +3,18 @@
     src: url('police/Ubuntu-C.ttf');
 }
 
+body
+{
+    /*background-color: rgb(89, 204, 51);*/
+    background-image : url("images/wartz.jpeg");
+    color: black;
+}
+
 .titre
 {
 	font-family:'Ubuntu-C';
-	font-size: 2em;
-    color: red;
+	font-size: 1.9em;
+    color: rgb(255, 115, 30);
 
     text-decoration: none;
     text-align: center;
@@ -20,4 +27,9 @@
 
     text-decoration: none;
     text-align: justify;
+}
+
+.image_texte
+{
+    float: right;
 }
