@@ -8,9 +8,16 @@
 	font-family:'Ubuntu-C';
 	font-size: 2em;
     color: red;
+
+    text-decoration: none;
+    text-align: center;
 }
 
-em
+.texte
 {
     color: green;
+    font-style: italic;;
+
+    text-decoration: none;
+    text-align: justify;
 }
