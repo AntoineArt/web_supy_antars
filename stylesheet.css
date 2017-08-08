@@ -5,14 +5,14 @@
 
 body
 {
-    background-color: rgb(89, 204, 51);
+    background-color: rgb(89, 124, 51);
     /*background-image : url("images/wartz.jpeg");*/
-    color: white;
+    color: black;
 }
 
 .titre
 {
-		font-family:'Ubuntu-C';
+	font-family:'Ubuntu-C';
 		font-size: 1.9em;
     color: rgb(255, 115, 30);
 
@@ -22,7 +22,7 @@ body
 
 .texte
 {
-    color: green;
+    color: yellow;
     font-style: italic;;
 
     text-decoration: none;
