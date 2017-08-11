@@ -10,7 +10,6 @@ body
     background: rgb(224,224,224);
     font-family: 'Ubuntu-C';
     color: rgb(255,128,0);
-    text-align: center;
 }
 
 #page
@@ -49,6 +48,7 @@ header h1
     font-weight: normal;
     color: rgb(255,50,50);
     margin: 0 0 0 0px;
+    text-align: center;
 
 }
 
