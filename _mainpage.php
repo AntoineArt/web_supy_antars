@@ -11,23 +11,10 @@
 	<div id="page">
 
 		<!--HEADER--> <!--IN PROGRESS-->
-	    <header>
-	    	<div class="titre">
-	    		<h1>
-			        World Of Magical Monster Evangelion Hunter Fortress VS Attack on Titans of Might and Magic<br />
-			        マジカルモンスターエヴァンゲリオンハンター砦の世界VSタイトな騎士と魔法の攻撃
-			    </h1>
-	    	</div>
-	    </header>
+	    <?php include("extract/header.php"); ?>
 
 	    <!--BANNIERE & NAVIGATION--> <!--IN PROGRESS-->
-        <nav>
-        	<ul>
-			    <p><a href="wiki/mainwiki.html" title="Pour en apprendre plus sur ce monde fantastique !">Wiki</a></p>
-			    <p><a href="forum.html" title="Pour partager vos expériences avec d'autres aventuriers !">Forums</a></p>
-			    <p><a href="communauté.html" title="Pour découvrir les derniers fan arts !">Communauté</a></p>
-		    </ul>
-	    </nav>
+        <?php include("extract/bannière.php"); ?>
 
         <!--MAIN-->
 	    <section>
@@ -47,13 +34,8 @@
 	    </section>
 
 		<!--FOOTER--> <!--IN PROGRESS-->
-	    <footer>
-	        <div class="footer_contact">
-	        	<h2>Contacts :</h2>
-		        	<p><a href="mailto:antoine.artillan@telecomnancy.net" title="Un apprenti webmaster">antoine.artillan@telecomnancy.net</a></p>
-		        	<p><a href="mailto:benoit.frapiccini@telecomnancy.net" title="Un platypus">benoit.frapiccini@telecomnancy.net</a></p>
-	        </div>
-	    </footer>
+		<?php include("extract/footer.php"); ?>
+
 	</div>
 </body>
 </html>
