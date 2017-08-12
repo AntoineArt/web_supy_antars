@@ -56,7 +56,7 @@ aside{
 }
 
 header{
-	background-image: url('images/godzilla.jpg');
+	background-image: url('images/godzilla.jpeg');
 	background-size:contain;
 	background-attachment:fixed;
 	-webkit-filter: grayscale(50%);
