@@ -1,17 +1,55 @@
 /*GENERAL*/
-@@font-face {
+@font-face {
 	font-family: 'HunterPolice';
-	src: url('police/Mechanized.otf');
+	src: url('police/Mechanization.ttf');
+}
+
+@font-face{
+	font-family: 'FiraPolice';
+	src:url('police/Fira/FiraSans-Book.otf');
+}
+
+nav{
+	font-family: 'HunterPolice';
+	text-align: right;
 }
 
 h1, h2{
 	font-family: 'HunterPolice';
+	font-weight: bold;
+	text-align: justify;
 }
 
 body{
-	font-family: 'HunterPolice';
+	font-family: 'FiraPolice';
+	text-align: justify;
 }
 
 header{
+	background-image: url('images/godzilla.jpg');
+	background-attachment: fixed;
+	-webkit-filter: grayscale(50%);
+	filter: grayscale(50%);
+	border-radius: 10px;
+	box-shadow: 0px 4px 6px;
+}
+
+header h1{
 	font-family: 'HunterPolice';
+	text-align:center;
+	filter:drop-shadow(10);;
+	color:red;
+	letter-spacing: 3px
+}
+
+a{
+	text-decoration: underline;
+	color: blue;
+}
+
+a:hover
+{
+	text-decoration: underline;
+	font-weight: bold;
+	color: green;
 }
