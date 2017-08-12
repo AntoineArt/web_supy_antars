@@ -1,5 +1,5 @@
 /*GENERAL*/
-@font-face {
+@font-face{
 	font-family: 'HunterPolice';
 	src: url('police/Mechanization.ttf');
 }
@@ -9,84 +9,110 @@
 	src:url('police/Fira/FiraSans-Book.otf');
 }
 
-#page{
-	width: 900px;
-	margin:auto;
+#page
+{
+    width: 900px;
+    margin: auto;
 }
 
-nav{
-	display: flex;
-	font-family: 'HunterPolice';
-	box-shadow: 3px 3px 3px white;
-	text-align: right;
+/*HEADER*/
+header
+{
+    /*Image trop grande, il faut la centrer*/
+    background-image: url('images/godzilla.jpeg');
+		background-attachment: fixed;
+		background-size: contain;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px black;
+    padding: 10px;
 }
 
-h1, h2{
-	font-family: 'HunterPolice';
-	font-weight: bold;
-	text-align: justify;
+header h1
+{
+    font-family: 'HunterPolice';
+    font-size: 2.5em;
+    font-weight: normal;
+		text-shadow: 7px 3px 3px red, -7px -3px 3px blue;
+    color: white;
+    margin: 0px 0px 0px;
 }
 
-body{
-	display: flex;
-	font-family: 'FiraPolice';
-	background-color: rgb(125, 120, 120);
-	text-align: justify;
-	color: rgb(175, 91, 38);
-	text-shadow: 1px 1px 1px black;
-	margin: 10px;
+/*CORPS*/
+body
+{
+    background: rgb(210,210,210);
+    font-family: 'FiraPolice';
+    color: rgb(175, 91, 38);
+    text-align: center;
 }
 
-article, aside{
-	border-radius: 10px;
-	padding: 10px;
-	margin: 10px 5px;
-	background-color: rgb(200, 200, 200);
-	text-shadow: none;
-	box-shadow: 0px 4px 6px;
+h1, h2
+{
+    font-family: 'HunterPolice';
+    font-weight: normal;
+    text-transform: uppercase;
 }
 
-article{
-	flex : 5;
+/*NAVIGATION*/
+nav ul
+{
+    display: flex;
+    justify-content: space-around;
 }
 
-aside{
-	flex:1;
-	text-align: justify;
+nav a
+{
+    font-size: 1.3em;
+    color : rgb(200,200,0);
+    padding-bottom: 3px;
+    text-decoration: none; /*Supprime le soulignement*/
 }
 
-header{
-	background-image: url('images/godzilla.jpeg');
-	background-size:contain;
-	background-attachment:fixed;
-	-webkit-filter: grayscale(50%);
-	filter: grayscale(50%);
-	border-radius: 10px;
-	box-shadow: 0px 4px 6px;
+/*MAIN*/
+section
+{
+    display: flex;
+    margin: 20 0 20 0px;
 }
 
-header h1{
-	font-family: 'HunterPolice';
-	text-align:center;
-	text-shadow: 7px 3px 3px red, -7px -3px 3px blue;
-	font-size: 1.5em;
-	filter:none;
-	color:white;
-	letter-spacing: 3px
+article, aside
+{
+    text-align: justify;
 }
 
+article
+{
+    margin-right: 20px;
+    flex: 5;
+}
 
-a{
-	text-decoration: underline;
-	color: blue;
+article p
+{
+    float: right;
+    font-size: 1em;
+}
+
+aside
+{
+    flex: 1;
+    background-color: rgb(150, 150, 150);
+    box-shadow: 0px 2px 4px rgb(175, 91, 38);
+    border-radius: 10px;
+    padding: 10px;
+
+    font-size: 1em;
+    color: white;
+}
+
+/*FOOTER*/
+footer
+{
+    display: flex;
 }
 
 a:hover
 {
-	text-decoration: underline;
-	color: white;
-}
-
-section{
-	display: flex;
+    color: rgb(255,255,255);
+    /*border-bottom: 3px solid rgb(255, 255, 255);*/
 }
