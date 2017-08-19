@@ -1,92 +1,126 @@
 /*GENERAL*/
-@font-face {
-	font-family: 'HunterPolice';
-	src: url('police/Mechanization.ttf');
+@font-face
+{
+    font-family: 'Ubuntu-C';
+    src: url('police/Ubuntu-C.ttf');
 }
 
-@font-face{
-	font-family: 'FiraPolice';
-	src:url('police/Fira/FiraSans-Book.otf');
+body
+{
+    background: rgb(224,224,224);
+    font-family: 'Ubuntu-C';
+    color: rgb(255,128,0);
+    text-align: center;
 }
 
-#page{
-	width: 900px;
-	margin:auto;
+#page
+{
+    width: 900px;
+    margin: auto;
 }
 
-nav{
-	display: flex;
-	font-family: 'HunterPolice';
-	box-shadow: 3px 3px 3px white;
-	text-align: right;
-}
-
-h1, h2{
-	font-family: 'HunterPolice';
-	font-weight: bold;
-	text-align: justify;
-}
-
-body{
-	display: flex;
-	font-family: 'FiraPolice';
-	background-color: rgb(125, 120, 120);
-	text-align: justify;
-	color: rgb(175, 91, 38);
-	text-shadow: 1px 1px 1px black;
-	margin: 10px;
-}
-
-article, aside{
-	border-radius: 10px;
-	padding: 10px;
-	margin: 10px 5px;
-	background-color: rgb(200, 200, 200);
-	text-shadow: none;
-	box-shadow: 0px 4px 6px;
-}
-
-article{
-	flex : 5;
-}
-
-aside{
-	flex:1;
-	text-align: justify;
-}
-
-header{
-	background-image: url('images/godzilla.jpeg');
-	background-size:contain;
-	background-attachment:fixed;
-	-webkit-filter: grayscale(50%);
-	filter: grayscale(50%);
-	border-radius: 10px;
-	box-shadow: 0px 4px 6px;
-}
-
-header h1{
-	font-family: 'HunterPolice';
-	text-align:center;
-	text-shadow: 7px 3px 3px red, -7px -3px 3px blue;
-	font-size: 1.5em;
-	filter:none;
-	color:white;
-	letter-spacing: 3px
-}
-
-
-a{
-	text-decoration: underline;
-	color: blue;
+h1, h2
+{
+    font-family: 'Ubuntu-C';
+    font-weight: normal;
+    text-transform: uppercase;
 }
 
 a:hover
 {
-	text-decoration: underline;
-	color: white;
+    color: rgb(255,255,255);
+    /*border-bottom: 3px solid rgb(255, 255, 255);*/
 }
 
-section{
-	display: flex;
+/*HEADER*/
+header
+{
+    /*Image trop grande, il faut la centrer*/
+    background: url('images/bannière.jpg') repeat-x bottom;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px black;
+    padding: 10px;
+}
+
+header h1
+{
+    font-family: 'Ubuntu-C';
+    font-size: 2.5em;
+    font-weight: normal;
+    color: rgb(255,50,50);
+    margin: 0 0 0 0px;
+}
+
+/*NAVIGATION*/
+nav
+{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(150, 150, 150);
+
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 5px;
+}
+
+nav a
+{
+    font-size: 1.3em;
+    color : rgb(200,200,0);
+    text-decoration: none; /*Supprime le soulignement*/
+}
+
+.nav:nth-child(3)
+{
+    /*EN COURS*/
+    background-color: rgb(200, 200, 200);
+    color: white;
+}
+
+/*MAIN*/
+section
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+article, aside
+{
+    text-align: justify;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 5px;
+    background-color: rgb(150, 150, 150);
+    box-shadow: 0px 4px 6px black;
+
+    font-size: 1em;
+    color: white;
+}
+
+article
+{
+    flex: 5;
+}
+
+article p
+{
+    float: right;
+    padding-right: 30px;
+}
+
+aside
+{
+    flex: 1;
+}
+
+aside p
+{
+    float: right;
+}
+
+/*FOOTER*/
+footer
+{
+    display: flex;
 }
