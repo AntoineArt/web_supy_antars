@@ -1,14 +1,18 @@
 /*GENERAL*/
-@font-face
-{
-    font-family: 'Ubuntu-C';
-    src: url('police/Ubuntu-C.ttf');
+@font-face{
+    font-family: 'FiraPolice';
+    src:url('police/Fira/FiraSans-Book.otf');
 }
+
+@font-face {
+    font-family: 'HunterPolice';
+    src: url('police/Mechanization.ttf');
+} 
 
 body
 {
     background: rgb(224,224,224);
-    font-family: 'Ubuntu-C';
+    font-family: 'FiraPolice';
     color: rgb(255,128,0);
     text-align: justify;
 }
@@ -17,13 +21,6 @@ body
 {
     width: 900px;
     margin: auto;
-}
-
-h1, h2
-{
-    font-family: 'Ubuntu-C';
-    font-weight: normal;
-    text-transform: uppercase;
 }
 
 a:hover
@@ -45,7 +42,7 @@ header
 
 header h1
 {
-    font-family: 'Ubuntu-C';
+    font-family: 'HunterPolice';
     font-size: 2.5em;
     font-weight: normal;
     color: rgb(255,50,50);
