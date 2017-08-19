@@ -9,8 +9,12 @@
 
 	<body>
 		<div id="page" class="login">
-			<p>Identifiant <input type="text" name="pseudo"/></p>
-			<P>Mot de passe <input type="password" name="mdp"/></P>
+			<form action="cible.php" method="post">
+				<p>
+		    		<input type="text" name="prenom" />
+		    		<input type="submit" value="Valider" />
+				</p>
+			</form>
 		</div>
 	</body>
 </html>
