@@ -11,7 +11,7 @@
 
 body
 {
-    background: rgb(224,224,224);
+    background: rgb(180,180,180);
     font-family: 'FiraPolice';
     color: rgb(255,255,255);
     text-align: justify;
@@ -19,7 +19,8 @@ body
 
 h1, h2
 {
-		color: rgb(255, 128, 0);
+	color: rgb(255, 128, 0);
+    font-weight: bold;
 }
 
 #page
@@ -33,8 +34,8 @@ header
 {
     /*Image trop grande, il faut la centrer*/
     background: url('images/bannière.jpg') repeat-x bottom;
-		background-size:cover;
-		margin: 10px 5px;
+	background-size:cover;
+	margin: 10px 5px;
     display: flex;
     border-radius: 10px;
     box-shadow: 0px 4px 6px black;
@@ -45,8 +46,7 @@ header h1
 {
     font-family: 'HunterPolice';
     font-size: 2.5em;
-    font-weight: normal;
-    color: rgb(255,50,50);
+    color: rgb(255,25,25);
     margin: 0 0 0 0px;
     text-align: center;
 }
@@ -60,7 +60,7 @@ nav
     border-radius: 10px;
     padding: 10px;
     margin: 15px 5px;
-    background-color: rgb(150, 150, 150);
+    background-color: rgb(120, 120, 120);
     box-shadow: 0px 4px 6px black;
 }
 
@@ -90,7 +90,7 @@ article, aside
     border-radius: 10px;
     padding: 10px;
     margin: 10px 5px;
-    background-color: rgb(150, 150, 150);
+    background-color: rgb(120, 120, 120);
     box-shadow: 0px 4px 6px black;
 
     font-size: 1em;
