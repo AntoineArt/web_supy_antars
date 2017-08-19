@@ -22,7 +22,12 @@ h1, h2{
     text-align: left;
 }
 
+a{
+    text-decoration: none; /*Supprime le soulignement*/
+}
+
 a:hover{
+    text-decoration: none; /*Supprime le soulignement*/
     color: rgb(255,255,255);
     /*border-bottom: 3px solid rgb(255, 255, 255);*/
 }
