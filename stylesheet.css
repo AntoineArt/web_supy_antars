@@ -11,7 +11,7 @@
 
 body
 {
-    background: rgb(180,180,180);
+    background: rgb(160,160,160);
     font-family: 'FiraPolice';
     color: rgb(255,255,255);
     text-align: justify;
@@ -19,14 +19,18 @@ body
 
 h1, h2
 {
-	color: rgb(255, 128, 0);
+	color: rgb(255, 192, 32);
     font-weight: bold;
+    text-align: left;
 }
 
 #page
 {
-    width: 900px;
+    width: 1000px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 /*HEADER*/
@@ -60,14 +64,14 @@ nav
     border-radius: 10px;
     padding: 10px;
     margin: 15px 5px;
-    background-color: rgb(120, 120, 120);
+    background-color: rgb(140, 140, 140);
     box-shadow: 0px 4px 6px black;
 }
 
 nav a
 {
     font-size: 1.3em;
-    color : rgb(255,128,0);
+    color: rgb(255, 192, 32);
     text-decoration: none; /*Supprime le soulignement*/
 }
 
@@ -89,7 +93,7 @@ article, aside
     border-radius: 10px;
     padding: 10px;
     margin: 10px 5px;
-    background-color: rgb(120, 120, 120);
+    background-color: rgb(140, 140, 140);
     box-shadow: 0px 4px 6px black;
 
     font-size: 1em;
