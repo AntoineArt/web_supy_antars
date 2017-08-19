@@ -10,10 +10,10 @@
 <body>
 	<div id="page">
 
-		<!--HEADER--> <!--IN PROGRESS-->
+		<!--HEADER-->
 	    <?php include("components/header.php"); ?>
 
-	    <!--BANNIERE & NAVIGATION--> <!--IN PROGRESS-->
+	    <!--NAVIGATION-->
         <?php include("components/navigation.php"); ?>
 
         <!--MAIN-->
@@ -28,12 +28,12 @@
 	    		<h1>Le saviez-vous ?</h1>
 		    	<p>Notre MJ est originaire de Cuba</p>
 		    	<p>Il a passé une partie de son enfance comme esclave dans une mine de sel en afrique</p>
-		    	<p>Il est frileux as fuck</p>
+		    	<p>Il est putain frileux as fuck, genre vraiment</p>
 		    	<p>île ah in cens égû de lorto graff</p>
 	    	</aside>
 	    </section>
 
-		<!--FOOTER--> <!--IN PROGRESS-->
+		<!--FOOTER-->
 		<?php include("components/footer.php"); ?>
 
 	</div>
