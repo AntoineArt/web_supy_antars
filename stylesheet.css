@@ -9,23 +9,25 @@
     src: url('police/Mechanization.ttf');
 }
 
-body
-{
+body{
     background: rgb(160,160,160);
     font-family: 'FiraPolice';
     color: rgb(255,255,255);
     text-align: justify;
 }
 
-h1, h2
-{
-		color: rgb(255, 192, 32);
+h1, h2{
+	color: rgb(255, 192, 32);
     font-weight: bold;
     text-align: left;
 }
 
-#page
-{
+a:hover{
+    color: rgb(255,255,255);
+    /*border-bottom: 3px solid rgb(255, 255, 255);*/
+}
+
+#page{
     width: 1000px;
     margin: auto;
     display: flex;
@@ -34,8 +36,7 @@ h1, h2
 }
 
 /*HEADER*/
-header
-{
+header{
     /*Image trop grande, il faut la centrer*/
     background: url('images/bannière.jpg') repeat-x bottom;
 		background-size:cover;
@@ -46,8 +47,7 @@ header
     padding: 10px;
 }
 
-header h1
-{
+header h1{
     font-family: 'HunterPolice';
     font-size: 2.5em;
     color: rgb(255,25,25);
@@ -56,8 +56,7 @@ header h1
 }
 
 /*NAVIGATION*/
-nav
-{
+nav{
     display: flex;
     justify-content: space-around;
 
@@ -68,28 +67,24 @@ nav
     box-shadow: 0px 4px 6px black;
 }
 
-nav a
-{
 
-    color : rgb(255,128,0);
-		font-weight: bold;
+nav a{
+    font-size: 1.3em;
+    color: rgb(255, 192, 32);
     text-decoration: none; /*Supprime le soulignement*/
 }
 
-.nav:nth-child(4)
-{
+.nav:nth-child(4){
     /*EN COURS*/
 }
 
 /*MAIN*/
-section
-{
+section{
     display: flex;
     justify-content: space-around;
 }
 
-article, aside
-{
+article, aside{
     text-align: justify;
     border-radius: 10px;
     padding: 10px;
@@ -101,40 +96,37 @@ article, aside
     color: white;
 }
 
-article
-{
+article{
     flex: 5;
 }
 
-article p
-{
+article p{
     float: right;
     padding-right: 30px;
 }
 
-aside
-{
+aside{
     flex: 1;
 }
 
-aside p
-{
+aside p{
     float: right;
 }
 
 /*FOOTER*/
-footer
-{
-	text-align: left;
-		justify-content: flex-start;
+footer{
     display: flex;
     border-radius: 10px;
     padding: 10px;
     margin: 10px 5px;
 }
 
-a:hover
-{
-    color: rgb(255,255,255);
-    /*border-bottom: 3px solid rgb(255, 255, 255);*/
+/*FORMULAIRES*/
+form{
+    text-align: justify;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 5px;
+    background-color: rgb(140, 140, 140);
+    box-shadow: 0px 4px 6px black;
 }

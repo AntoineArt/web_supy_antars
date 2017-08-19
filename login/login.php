@@ -8,12 +8,11 @@
 	</head>
 
 	<body>
-		<div id="page" class="login">
-			<form action="cible.php" method="post">
-				<p>
-		    		<input type="text" name="prenom" />
-		    		<input type="submit" value="Valider" />
-				</p>
+		<div id="page">
+			<form action="_mainpage.php" method="post">
+				<p> Identifiant <input type="text" name="pseudo" /> </p>
+		    	<p> Mot de passe <input type="password" name="mdp" /> </p>
+		    	<P> <input type="submit" value="Valider" /> </p>
 			</form>
 		</div>
 	</body>

@@ -1,8 +1,5 @@
 <footer>
 	<div class="footer_contact">
-<<<<<<< HEAD
-	  <h2>Contacts :</h1>
-=======
 	    <h2>Contacts :</h1>
 		<!-- LOL
 >>>>>>> 03722f658047ac4e9490929c0fd376c5f5fd1b77
