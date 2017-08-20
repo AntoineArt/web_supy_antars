@@ -24,6 +24,7 @@ h1, h2{
 
 a{
     text-decoration: none; /*Supprime le soulignement*/
+    color: rgb(255, 192, 32);
 }
 
 a:hover{
@@ -44,8 +45,8 @@ a:hover{
 header{
     /*Image trop grande, il faut la centrer*/
     background: url('images/bannière.jpg') repeat-x bottom;
-		background-size:cover;
-		margin: 10px 5px;
+	background-size:cover;
+	margin: 10px 5px;
     display: flex;
     border-radius: 10px;
     box-shadow: 0px 4px 6px black;
@@ -75,7 +76,6 @@ nav{
 
 nav a{
     font-size: 1.3em;
-    color: rgb(255, 192, 32);
     text-decoration: none; /*Supprime le soulignement*/
 }
 
@@ -112,6 +112,7 @@ article p{
 
 aside{
     flex: 1;
+    text-align:left;
 }
 
 aside p{
@@ -124,15 +125,13 @@ footer{
     text-align:left;
     border-radius: 10px;
     padding: 10px;
-    margin: 10px 5px;
+    margin-left: 2em;
 }
 
-/*FORMULAIRES*/
-form{
-    text-align: justify;
+/*FORMULAIRE*/
+form{    
+    text-align: left;
     border-radius: 10px;
     padding: 10px;
     margin: 10px 5px;
-    background-color: rgb(140, 140, 140);
-    box-shadow: 0px 4px 6px black;
 }
