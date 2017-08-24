@@ -11,7 +11,7 @@ else
 	switch ($_GET['section'])
 	{
 		case 'wiki_main':
-		include_once('vue/wiki/mainwiki.php');
+		include_once('vue/wiki/mainwiki.html');
 		break;
 
 		case 'forums_main':
