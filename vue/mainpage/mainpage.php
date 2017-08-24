@@ -1,15 +1,8 @@
-<?php
-session_start();
-//if (isset($_SESSION['identifiant'])){
-	setcookie('pseudo', $_SERVER['REMOTE_ADDR'], time() + 60, null, null, false, true); // Cookie :D
-//}
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="stylesheet.css" />
+    <link rel="stylesheet" href="./vue/stylesheet.css" />
     <title>World Of Magical Monster Evangelion Hunter Fortress VS Attack on Titans of Might and Magic</title>
 </head>
 
@@ -17,10 +10,10 @@ session_start();
 	<div id="page">
 
 		<!--HEADER-->
-	    <?php include("components/header.php"); ?>
+	    <?php include("./vue/components/header.php"); ?>
 
 	    <!--NAVIGATION-->
-        <?php include("components/navigation.php"); ?>
+        <?php include("./vue/components/navigation.php"); ?>
 
         <!--MAIN-->
 	    <section>
@@ -40,7 +33,7 @@ session_start();
 	    </section>
 
 		<!--FOOTER-->
-		<?php include("components/footer.php"); ?>
+		<?php include("./vue/components/footer.php"); ?>
 
 	</div>
 </body>

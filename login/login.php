@@ -47,6 +47,7 @@
 				    	<p> Mot de passe <input type="password" name="mdp" /> </p>
 				    	<P> <input type="submit" value="Valider" /> </p>
 					</form>
+					<p><a href="inscription.php" title="Pour s'inscrire ...">S'inscrire</a></p>
 				</section>
 				<?php
 			} ?>

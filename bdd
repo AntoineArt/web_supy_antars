@@ -1,0 +1,114 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.2
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : localhost:8889
+-- Généré le :  jeu. 24 août 2017 à 17:33
+-- Version du serveur :  5.6.35
+-- Version de PHP :  7.1.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Base de données :  `WebSA`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `billets`
+--
+
+CREATE TABLE `billets` (
+  `id` int(11) NOT NULL,
+  `titre` varchar(255) NOT NULL,
+  `contenu` text NOT NULL,
+  `date_creation` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `billets`
+--
+
+INSERT INTO `billets` (`id`, `titre`, `contenu`, `date_creation`) VALUES
+(1, 'test', 'c\'est un test', '2017-08-24 00:00:00'),
+(3, 'test2', 'c\'est un test2', '2017-08-24 00:01:00'),
+(4, 'test3', 'c\'est un test3', '2017-08-24 00:02:00');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `commentaires`
+--
+
+CREATE TABLE `commentaires` (
+  `id` int(11) NOT NULL,
+  `id_billet` int(11) NOT NULL,
+  `auteur` varchar(255) NOT NULL,
+  `commentaire` text NOT NULL,
+  `date_commentaire` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `membres`
+--
+
+CREATE TABLE `membres` (
+  `id` int(11) NOT NULL,
+  `pseudo` varchar(255) NOT NULL,
+  `mdp` text NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `date_inscription` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `membres`
+--
+
+INSERT INTO `membres` (`id`, `pseudo`, `mdp`, `email`, `date_inscription`) VALUES
+(2, 'supytalp', 'cba21f3c76277e9ac0c1d19ef8e542d62aaef3ad98feff58c12e47e6f830cf33ec8a4e23bb0082a38fc559cc321ba08704dc740db7991352ac5316d402045e00', 'test', '2017-08-24');
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `billets`
+--
+ALTER TABLE `billets`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `commentaires`
+--
+ALTER TABLE `commentaires`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `membres`
+--
+ALTER TABLE `membres`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `billets`
+--
+ALTER TABLE `billets`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT pour la table `commentaires`
+--
+ALTER TABLE `commentaires`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `membres`
+--
+ALTER TABLE `membres`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
