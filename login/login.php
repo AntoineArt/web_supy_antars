@@ -1,10 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION['identifiant'])){
-	setcookie('pseudo', $_SESSION['identifiant'], time() + 3600, null, null, false, true); // Cookie :D
-}
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -15,6 +8,17 @@ if (isset($_SESSION['identifiant'])){
 
 	<body>
 		<div id="page">
+
+			<p> Tu es <?php echo $_COOKIE['pseudo']; ?>
+
+			<?php
+			try{
+				$bdd = new PDO('mysql:host=localhost;dbname=WebSA;charset=utf8', 'root', 'root');
+			}
+			catch (Exception $e){
+			        die('Erreur : ' . $e->getMessage());
+			}
+			?>
 
 			<?php
 			if (isset($_POST['identifiant']) AND $_POST['identifiant'] ==  "supytalp" AND $_POST['mdp'] AND $_POST['mdp'] ==  "platypus")

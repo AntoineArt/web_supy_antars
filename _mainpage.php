@@ -1,5 +1,11 @@
-<!DOCTYPE html>
+<?php
+session_start();
+//if (isset($_SESSION['identifiant'])){
+	setcookie('pseudo', $_SERVER['REMOTE_ADDR'], time() + 60, null, null, false, true); // Cookie :D
+//}
+?>
 
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
