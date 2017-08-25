@@ -1,0 +1,4 @@
+AuthName "Administration du site (protected)"
+AuthType Basic
+AuthUserFile "/Users/User/Desktop/Projects/Sites/web_supy_antars/admin/.htpasswd"
+Require valid-user

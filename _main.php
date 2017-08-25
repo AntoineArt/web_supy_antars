@@ -1,7 +1,5 @@
 <?php
 
-//include_once('vue/identification/inscription.php');
-
 if (!isset($_GET['section']) OR $_GET['section'] == 'mainpage')
 {
     include_once('vue/mainpage/mainpage.php');
