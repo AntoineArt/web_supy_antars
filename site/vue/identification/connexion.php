@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="vue/stylesheet.css"  />
+		<link rel="stylesheet" href="vue/stylesheet.css" />
 		<title>Login</title>
 	</head>
 

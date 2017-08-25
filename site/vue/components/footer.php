@@ -1,3 +1,8 @@
+<!--
+	Auteur: Frapiccini Benoît
+	Ce code html correspond au pied de page de la majorité des pages.
+-->
+
 <footer>
 	<div id="footer_contact">
 	    <h2>Contacts :</h1>

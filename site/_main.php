@@ -1,7 +1,19 @@
 <?php
+/*
+	Auteur: Frapiccini Benoît
+	Ce programme est le coeur du site : Il s'occupe de construire les pages que l'utilisateur verra.
+	Toutes les pages pointent sur lui, et elles lui fournissent dans l'URL l'identifiant des éléments à afficher.
+	Par défaut, la page affichée est la page d'accueil.
+	Les pages étant incluses en cascade, c'est également ce programme qui gère le démarrage des sessions et qui appelle
+	les scripts globaux.
+
+	/!\ Il est primordial pour le fonctionnement et la sécurité du site de respecter l'inclusion en cascade !
+	/!\ Les liens vers d'autres fichiers auront toujours comme origine la racine, car les pages sont construites ici !
+*/
 
 session_start();
 $_SESSION['error']=0;
+include_once('controleur/identification/autoconnect.php');
 
 if (!isset($_GET['section']) OR $_GET['section'] == 'mainpage')
 {

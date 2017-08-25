@@ -1,3 +1,8 @@
+<!--
+	Auteur: Frapiccini Benoît
+	Ce code html est la page d'accueil du site.
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +32,7 @@
 	    		<h1>Le saviez-vous ?</h1>
 		    	<p>Notre MJ est originaire de Cuba</p>
 		    	<p>Il a passé une partie de son enfance comme esclave dans une mine de sel en afrique</p>
-		    	<p>Il est putain frileux as fuck, genre vraiment</p>
+		    	<p>Il est putain de frileux as fuck, genre vraiment</p>
 		    	<p>île ah in cens égû de lorto graff</p>
 	    	</aside>
 	    </section>

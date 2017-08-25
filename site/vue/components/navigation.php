@@ -1,3 +1,9 @@
+<!--
+	Auteur: Frapiccini Benoît
+	Ce code html correspond à la barre de navigation de la majorité des pages.
+	Un code php permet de s'adapter à la connexion (ou non) de l'utilisateur au site.
+-->
+
 <nav>
 	<p><a href="./_main.php?section=mainwiki" title="Pour en apprendre plus sur ce monde fantastique !">Wiki</a></p>
 	<p><a href="./_main.php?section=mainforums" title="Pour partager vos expériences avec d'autres aventuriers !">Forums</a></p>
@@ -7,7 +13,7 @@
 	if(!isset($_SESSION['pseudo'])){
 	?>
 		<p>
-			<a href="./_main.php?section=connexion" title="T'es qui au juste ?">Login</a>
+			<a href="./_main.php?section=connexion" title="T'es qui au juste ?">Se connecter</a>
 		</p>
 	<?php
 	}

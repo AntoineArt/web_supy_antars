@@ -1,8 +1,14 @@
+<!--
+	Auteur: Frapiccini Benoît
+	Ce code html est le formulaire d'inscription au site.
+	Le formulaire est renvoyé directement au _main pour être traité par un controleur.
+-->
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="../../vue/stylesheet.css"  />
+		<link rel="stylesheet" href="vue/stylesheet.css" />
 		<title>Login</title>
 	</head>
 
@@ -10,11 +16,11 @@
 		<div id="page">
 
 			<!--HEADER-->
-			<?php include("../../vue/components/header.php"); ?>
+			<?php include("vue/components/header.php"); ?>
 
 		    <!--MAIN-->
 		    <section>
-				<form action="../../controleur/identification/inscription.php" method="post">
+				<form action="_main.php?section=inscription" method="post">
 					<h1>Inscription :</h1>
 					<p> Pseudo <input type="text" name="pseudo" /> </p>
 				    <p> Mot de passe <input type="password" name="mdp" /> </p>
