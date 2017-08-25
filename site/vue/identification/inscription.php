@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="./vue/stylesheet.css"  />
+		<link rel="stylesheet" href="../../vue/stylesheet.css"  />
 		<title>Login</title>
 	</head>
 
@@ -10,11 +10,11 @@
 		<div id="page">
 
 			<!--HEADER-->
-			<?php include("./vue/components/header.php"); ?>
+			<?php include("../../vue/components/header.php"); ?>
 
 		    <!--MAIN-->
 		    <section>
-				<form action="./controleur/identification/inscription.php" method="post">
+				<form action="../../controleur/identification/inscription.php" method="post">
 					<h1>Inscription :</h1>
 					<p> Pseudo <input type="text" name="pseudo" /> </p>
 				    <p> Mot de passe <input type="password" name="mdp" /> </p>

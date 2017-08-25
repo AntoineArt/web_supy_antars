@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+$_SESSION['error']=0;
+
 if (!isset($_GET['section']) OR $_GET['section'] == 'mainpage')
 {
     include_once('vue/mainpage/mainpage.php');
@@ -19,7 +22,7 @@ else
 		break;
 
 		case 'connexion':
-		include_once('vue/identification/connexion.php');
+		include_once('controleur/identification/connexion.php');
 		break;
 
 		case 'deconnexion':
@@ -27,7 +30,7 @@ else
 		break;
 
 		case 'inscription':
-		include_once('vue/identification/inscription.php');
+		include_once('controleur/identification/inscription.php');
 		break;
 
 		default:

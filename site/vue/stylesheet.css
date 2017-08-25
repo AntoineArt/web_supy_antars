@@ -135,3 +135,7 @@ form{
     padding: 10px;
     margin: 10px 5px;
 }
+
+form .error{
+    color: rgb(255, 25, 25);
+}
