@@ -8,14 +8,14 @@ else
 {
 	switch ($_GET['section'])
 	{
-		case 'wiki_main':
+		case 'mainwiki':
 		include_once('vue/wiki/mainwiki.html');
 		break;
 
-		case 'forums_main':
+		case 'mainforums':
 		break;
 
-		case 'communaute_main':
+		case 'maincommunaute':
 		break;
 
 		case 'connexion':
@@ -23,7 +23,7 @@ else
 		break;
 
 		case 'deconnexion':
-		include_once('vue/identification/deconnexion.php');
+		include_once('controleur/identification/deconnexion.php');
 		break;
 
 		case 'inscription':

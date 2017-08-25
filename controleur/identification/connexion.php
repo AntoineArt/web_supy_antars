@@ -1,5 +1,6 @@
 <?php 
 
+session_start();
 include_once('../../modele/connexion_bdd.php');
 include_once('../../modele/identification/connexion.php');
 
@@ -13,12 +14,13 @@ $liste = liste_comptes($pseudo, $mdpS, $bdd);
 
 if (!$liste)
 {
-    echo 'Mauvais identifiant ou mot de passe !';
+    header('location:./vue/identification/connexion.php?error=1');
+    exit();
 }
 else
 {
-    /*session_start();
-    $_SESSION['id'] = $resultat['id'];
-    $_SESSION['pseudo'] = $pseudo;*/
-    echo 'Vous êtes connecté !';
+    //$_SESSION['id'] = $resultat['id'];
+    $_SESSION['pseudo'] = $pseudo;
+    header('location:../../_main.php?section=mainpage');
+    exit();
 }
