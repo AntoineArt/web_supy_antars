@@ -57,12 +57,18 @@ header{
     padding: 10px;
 }
 
-header h1{
+header a{
     font-family: 'HunterPolice';
-    font-size: 2.5em;
+    font-size: 1.5em;
     color: rgb(255,25,25);
-    margin: 0 0 0 0px;
+
+    width: 970px;
+    display: block;
     text-align: center;
+}
+
+header a:hover{
+    color: rgb(255,25,25);
 }
 
 /*NAVIGATION*/
