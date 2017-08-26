@@ -1,3 +1,9 @@
+<!--
+	Auteur: Frapiccini Benoît
+	Ce code html est le formulaire de connexion au site.
+	Le formulaire est renvoyé directement au _main pour être traité par un controleur.
+-->
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -19,8 +25,8 @@
 					<?php
 					if($_SESSION['error']==1){?>
 						<div class="error"><p>Informations erronées</p></div>
-					<?php }
-					?>
+					<?php
+					}?>
 					<p> Pseudo <input type="text" name="pseudo" /> </p>
 				    <p> Mot de passe <input type="password" name="mdp" /> </p>
 				    <p> Connexion auto <input type="checkbox" name="autoconnect" /> </p>
