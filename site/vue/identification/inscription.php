@@ -19,6 +19,10 @@
 			<?php /*=====HEADER=====*/ ?>
 			<?php include("vue/components/header.php"); ?>
 
+			<?php /*=====NAVIGATION=====*/ ?>
+        	<?php include("./vue/components/navigation.php"); ?>
+
+
 		    <?php /*=====MAIN=====*/ ?>
 		    <section>
 				<form action="_main.php?section=inscription" method="post">

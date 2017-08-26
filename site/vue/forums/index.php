@@ -21,14 +21,18 @@
 			<?php /*=====HEADER=====*/ ?>
 			<?php include("vue/components/header.php"); ?>
 
+			<?php /*=====NAVIGATION=====*/ ?>
+        	<?php include("./vue/components/navigation.php"); ?>
+
+
 			<?php /*=====MAIN=====*/ ?>
 			<div id="forum">
-	        	<h1>Liste des sujets du forum :</h1> 
+	        	<!--<h1>Liste des sujets du forum :</h1>-->
 					<?php
 					foreach($billets as $billet){?>
 						<div class="post">
 						    <div class="nom_post"> <?php echo $billet['titre'];?> </div>
-						    <div class="infos_post">(<?php echo $billet['date_fr']; ?></div>
+						    <div class="infos_post"><?php echo $billet['date_fr']; ?></div>
 						    <p>
 						    	<?php echo $billet['contenu']; ?>
 						    	<br />

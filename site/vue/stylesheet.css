@@ -2,6 +2,18 @@
     Auteurs: Frapiccini Benoît & Artillan Antoine
 */
 
+/* index:
+- general
+- header
+- navigation
+- main
+- footer
+- formulaires
+- wiki
+- forum
+- communauté
+*/
+
 /*GENERAL*/
 @font-face{
     font-family: 'FiraPolice';
@@ -91,10 +103,6 @@ nav a{
     text-decoration: none; /*Supprime le soulignement*/
 }
 
-.nav:nth-child(4){
-    /*EN COURS*/
-}
-
 /*MAIN*/
 section{
     display: flex;
@@ -140,7 +148,7 @@ footer{
     margin-left: 2em;
 }
 
-/*FORMULAIRE*/
+/*FORMULAIRES*/
 form{    
     text-align: left;
     border-radius: 10px;
@@ -151,3 +159,31 @@ form{
 form .error{
     color: rgb(255, 25, 25);
 }
+
+/*WIKI*/
+
+/*FORUM*/
+#forum{
+    width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.post{
+    width: 400px;
+    border-radius: 0px;
+    padding: 0px;
+    margin: 5px 5px;
+    background-color: rgb(140, 140, 140);
+    box-shadow: 0px 4px 6px black;
+}
+/*COMMUNAUTE*/
+
+
+
+
+
+
+
