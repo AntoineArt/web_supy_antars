@@ -1,8 +1,10 @@
-<!--
+<?php
+/*
 	Auteur: Frapiccini Benoît
-	Ce code html correspond à la barre de navigation de la majorité des pages.
-	Un code php permet de s'adapter à la connexion (ou non) de l'utilisateur au site.
--->
+	Ce code correspond à la barre de navigation du site.
+	Il s'adapte en fonction de la connection (ou non) de l'utilisateur du site.
+*/
+?>
 
 <nav>
 	<p><a href="./_main.php?section=mainwiki" title="Pour en apprendre plus sur ce monde fantastique !">Wiki</a></p>

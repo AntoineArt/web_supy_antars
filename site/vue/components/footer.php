@@ -1,7 +1,9 @@
-<!--
+<?php
+/*
 	Auteur: Frapiccini Benoît
-	Ce code html correspond au pied de page de la majorité des pages.
--->
+	Ce code correspond au pied de page du site.
+*/
+?>
 
 <footer>
 	<div id="footer_contact">

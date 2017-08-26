@@ -1,7 +1,9 @@
-<!--
+<?php
+/*
 	Auteur: Frapiccini Benoît
-	Ce code html est la page d'accueil du site.
--->
+	Ce code correspond à la page d'accueil.
+*/
+?>
 
 <!DOCTYPE html>
 <html>
@@ -14,13 +16,13 @@
 <body>
 	<div id="page">
 
-		<!--HEADER-->
+		<?php /*=====HEADER=====*/ ?>
 	    <?php include("./vue/components/header.php"); ?>
 
-	    <!--NAVIGATION-->
+	    <?php /*=====NAVIGATION=====*/ ?>
         <?php include("./vue/components/navigation.php"); ?>
 
-        <!--MAIN-->
+        <?php /*=====MAIN=====*/ ?>
 	    <section>
 	    	<article>
 	    		<h1>Un superbe JDR à partager en famille !</h1>
@@ -37,7 +39,7 @@
 	    	</aside>
 	    </section>
 
-		<!--FOOTER-->
+		<?php /*=====FOOTER=====*/ ?>
 		<?php include("./vue/components/footer.php"); ?>
 
 	</div>

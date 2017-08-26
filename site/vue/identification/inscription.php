@@ -1,24 +1,25 @@
-<!--
+<?php
+/*
 	Auteur: Frapiccini Benoît
-	Ce code html est le formulaire d'inscription au site.
-	Le formulaire est renvoyé directement au _main pour être traité par un controleur.
--->
+	Ce code correspond à la page d'inscription.
+*/
+?>
 
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="vue/stylesheet.css" />
-		<title>Login</title>
+		<title>Inscription</title>
 	</head>
 
 	<body>
 		<div id="page">
 
-			<!--HEADER-->
+			<?php /*=====HEADER=====*/ ?>
 			<?php include("vue/components/header.php"); ?>
 
-		    <!--MAIN-->
+		    <?php /*=====MAIN=====*/ ?>
 		    <section>
 				<form action="_main.php?section=inscription" method="post">
 					<h1>Inscription :</h1>

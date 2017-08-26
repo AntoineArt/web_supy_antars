@@ -1,7 +1,9 @@
-<!--
+<?php
+/*
 	Auteur: Frapiccini Benoît
-	Ce code html correspond à l'en-tête de la majorité des pages.
--->
+	Ce code correspond à l'en-tête du site.
+*/
+?>
 
 <header>
 	<div class="titre">
