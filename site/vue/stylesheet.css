@@ -49,6 +49,10 @@ a:hover{
     /*border-bottom: 3px solid rgb(255, 255, 255);*/
 }
 
+strong{
+    color: rgb(255, 192, 32);
+}
+
 #page{
     width: 1000px;
     margin: auto;
@@ -164,21 +168,39 @@ form .error{
 
 /*FORUM*/
 #forum{
-    width: 900px;
     margin: auto;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-between;
     text-align: left;
 }
 
 .post{
-    width: 400px;
+    width: 480px;
+    height: 250px;
     border-radius: 0px;
-    padding: 0px;
+    padding: 5px;
     margin: 5px 5px;
     background-color: rgb(140, 140, 140);
     box-shadow: 0px 4px 6px black;
 }
+
+.post p{
+    width: 480px;
+    height: 150px;
+    word-wrap: break-word;
+    overflow:scroll;
+}
+
+#forum_creer{
+    border-radius: 10px;
+    padding: 10px;
+    margin: 15px 5px;
+    background-color: rgb(140, 140, 140);
+    box-shadow: 0px 4px 6px black;
+}
+
 /*COMMUNAUTE*/
 
 

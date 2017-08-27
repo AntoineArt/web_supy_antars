@@ -15,8 +15,9 @@ if(isset($_POST['pseudo']) AND isset($_POST['mdp']) AND isset($_POST['mdp2']) AN
 	$pseudo = $_POST['pseudo'];
 	$email = $_POST['email'];
 
-	$mdpS = hash('sha512',$_POST['mdp']); // Hachage du mot de passe
-
+	// Hachage du mot de passe
+	$mdpS = hash('sha512',$_POST['mdp']);
+	
 	// Inscription effective
 	inscription($pseudo, $mdpS, $email, $bdd);
 

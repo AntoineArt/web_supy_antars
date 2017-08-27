@@ -40,6 +40,9 @@
 				</form>
 			</section>
 
+			<?php /*=====FOOTER=====*/ ?>
+			<?php include("./vue/components/footer.php"); ?>
+
 		</div>
 	</body>
 </html>

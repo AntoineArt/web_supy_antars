@@ -23,17 +23,29 @@ else
 {
 	switch ($_GET['section'])
 	{
+		//Wiki
 		case 'mainwiki':
 		include_once("vue/wiki/mainwiki.html");
 		break;
 
+		//Forums
 		case 'mainforums':
 		include_once("controleur/forums/index.php");
 		break;
 
+		case 'commentaires':
+		include_once("controleur/forums/commentaires.php");
+		break;
+
+		case 'nouveau_billet':
+		include_once("controleur/forums/nouveau_billet.php");
+		break;
+
+		//Communauté
 		case 'maincommunaute':
 		break;
 
+		//Identification
 		case 'connexion':
 		include_once("controleur/identification/connexion.php");
 		break;
@@ -46,6 +58,7 @@ else
 		include_once("controleur/identification/inscription.php");
 		break;
 
+		//Rip
 		default:
 			echo ("Sorry, nothing to see here.");
 	}

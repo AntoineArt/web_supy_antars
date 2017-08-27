@@ -5,6 +5,7 @@
 */
 ?>
 
+<hr/>
 <footer>
 	<div id="footer_contact">
 	    <h2>Contacts :</h1>

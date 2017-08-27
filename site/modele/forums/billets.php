@@ -11,7 +11,7 @@ function billets($min, $max, $bdd)
     $min = (int) $min;
     $max = (int) $max;
     
-    $req = $bdd->prepare('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_fr
+    $req = $bdd->prepare('SELECT id, titre, contenu, auteur, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_fr
     	FROM billets ORDER BY date_creation DESC LIMIT :min, :max');
     // Les paramètres de fonction sont importants, sinon les valeurs ne seront pas respectées
     $req->bindParam(':min', $min, PDO::PARAM_INT);
