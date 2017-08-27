@@ -7,7 +7,7 @@
 // Si le formulaire html a été rempli
 if(isset($_POST['titre']) AND isset($_POST['contenu']) AND isset($_SESSION['pseudo']))
 {
-	//Connexion à la base de donnée et importation de la fonction liste_compte
+
 	include_once("modele/connexion_bdd.php");
 	include_once("modele/forums/nouveau_billet.php");
 

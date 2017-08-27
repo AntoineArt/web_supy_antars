@@ -10,7 +10,6 @@
 
 if(isset($_COOKIE['autoconnect']) AND isset($_COOKIE['pseudo']) AND isset($_COOKIE['mdpS']))
 {
-	//Connexion à la base de donnée et importation de la fonction liste_compte
 	include_once("modele/connexion_bdd.php");
 	include_once("modele/identification/connexion.php");
 

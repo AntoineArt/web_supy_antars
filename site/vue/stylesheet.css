@@ -193,6 +193,10 @@ form .error{
     overflow:scroll;
 }
 
+.nom_post{
+    text-transform: uppercase;
+}
+
 #forum_creer{
     border-radius: 10px;
     padding: 10px;

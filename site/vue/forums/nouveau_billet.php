@@ -2,6 +2,7 @@
 /*
 	Auteur: Frapiccini Benoît
 	Ce code correspond à la page de création d'un nouveau billet pour les forums.
+	La taille du contenu est limitée à 5000 caractères.
 */
 ?>
 
@@ -28,7 +29,7 @@
 				<form action="_main.php?section=nouveau_billet" method="post">
 					<h1>Nouveau billet :</h1>
 					<p> Titre <input type="text" name="titre" /> </p>
-				    <p> Contenu (max:2000char)<br/> <textarea name="contenu" rows="20" cols="100" maxlength="2000"></textarea></p>
+				    <p> Contenu (max:5000char)<br/> <textarea name="contenu" rows="20" cols="100" maxlength="5000"></textarea></p>
 				    <p> <input type="submit" value="Valider" /> </p>
 				</form>
 			</section>

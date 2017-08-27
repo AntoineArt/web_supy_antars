@@ -11,7 +11,6 @@
 // Si le formulaire html a été rempli
 if(isset($_POST['pseudo']) AND isset($_POST['mdp']))
 {
-	//Connexion à la base de donnée et importation de la fonction liste_compte
 	include_once("modele/connexion_bdd.php");
 	include_once("modele/identification/connexion.php");
 
