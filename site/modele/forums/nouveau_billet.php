@@ -7,7 +7,7 @@
 	/!\ La requête est préparée avant d'être éxécutée afin de protéger la base de donnée !
 */
 
-function nouveau_billet($titre, $contenu, $pseudo, $bdd) // Inscription d'un nouveau membre
+function nouveau_billet($titre, $contenu, $pseudo, $bdd)
 {
 	$req = $bdd->prepare('INSERT INTO billets(titre, contenu, auteur, date_creation) VALUES(:titre, :contenu, :pseudo, NOW())');
 	$req->execute(array(

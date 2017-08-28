@@ -33,12 +33,16 @@ else
 		include_once("controleur/forums/index.php");
 		break;
 
+		case 'nouveau_billet':
+		include_once("controleur/forums/nouveau_billet.php");
+		break;
+
 		case 'commentaires':
 		include_once("controleur/forums/commentaires.php");
 		break;
 
-		case 'nouveau_billet':
-		include_once("controleur/forums/nouveau_billet.php");
+		case 'nouveau_commentaire':
+		include_once("controleur/forums/nouveau_commentaire.php");
 		break;
 
 		//Communauté

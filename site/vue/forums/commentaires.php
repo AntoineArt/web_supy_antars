@@ -10,7 +10,16 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="vue/stylesheet.css" />
-		<title>Forums</title>
+		<title>
+			<?php //On utilise le GET si accès direct, ou le SESSION si retour depuis un nouveau commentaire
+			if (isset($_GET["titre"])){
+				echo $_GET["titre"];
+			}
+			else{
+				echo $_SESSION["titre_billet"];
+			}
+			?>
+		</title>
 	</head>
 
 	<body>
@@ -30,6 +39,7 @@
 					<div class="commentaire">
 						<div class="infos_commentaire">Par <strong><?php echo $commentaires['auteur'];?></strong> le <?php echo $commentaires['date_fr']; ?></div>
 						<div class="contenu_commentaire"><p> <?php echo $commentaires['contenu']; ?> </p></div>
+						<hr/>
 					</div>
 				<?php
 				}?>
@@ -38,7 +48,7 @@
 			<div id="commentaire_creer">
 				<?php
 				if(isset($_SESSION['pseudo'])){?>
-					<a href="_main.php?section=commentaires&amp;billet=<?php echo $billet['id']; ?>">Nouveau commentaire</a>
+					<a href="_main.php?section=nouveau_commentaire&amp;billet=<?php echo $_GET['billet']; ?>&amp;titre=<?php echo $_GET['titre'];?>">Nouveau commentaire</a>
 				<?php
 				}
 				else{?>
