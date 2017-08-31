@@ -1,7 +1,8 @@
 <?php
 /*
 	Auteur: Frapiccini Benoît
-	Ce code correspond à la page d'inscription.
+	Ce code correspond à la page de création d'un nouveau billet pour les forums.
+	La taille du contenu est limitée à 5000 caractères.
 */
 ?>
 
@@ -10,7 +11,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="vue/stylesheet.css" />
-		<title>Inscription</title>
+		<title>Nouveau billet</title>
 	</head>
 
 	<body>
@@ -25,12 +26,10 @@
 
 		    <?php /*=====MAIN=====*/ ?>
 		    <section>
-				<form action="_main.php?section=inscription" method="post">
-					<h1>Inscription :</h1>
-					<p> Pseudo <input type="text" name="pseudo" /> </p>
-				    <p> Mot de passe <input type="password" name="mdp" /> </p>
-				    <p> Répéter mot de passe <input type="password" name="mdp2" /> </p>
-				    <p> Adresse mail <input type="text" name="email" /> </p>
+				<form action="_main.php?section=nouveau_billet" method="post">
+					<h1>Nouveau billet :</h1>
+					<p> Titre <input type="text" name="titre" /> </p>
+				    <p> Contenu (max:5000char)<br/><textarea name="contenu" rows="20" cols="100" maxlength="5000"></textarea></p>
 				    <p> <input type="submit" value="Valider" /> </p>
 				</form>
 			</section>

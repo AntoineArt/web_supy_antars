@@ -1,4 +1,20 @@
-/*GENERAL*/
+/*
+    Auteurs: Frapiccini Benoît & Artillan Antoine
+*/
+
+/* index:
+- general
+- header
+- navigation
+- main
+- footer
+- formulaires
+- wiki
+- forum
+- communauté
+*/
+
+/* =====GENERAL===== */
 @font-face{
     font-family: 'FiraPolice';
     src:url('police/Fira/FiraSans-Book.otf');
@@ -33,6 +49,10 @@ a:hover{
     /*border-bottom: 3px solid rgb(255, 255, 255);*/
 }
 
+strong{
+    color: rgb(255, 192, 32);
+}
+
 #page{
     width: 1000px;
     margin: auto;
@@ -41,7 +61,7 @@ a:hover{
     text-align: center;
 }
 
-/*HEADER*/
+/* =====HEADER===== */
 header{
     /*Image trop grande, il faut la centrer*/
     background: url('images/bannière.jpg') repeat-x bottom;
@@ -53,15 +73,23 @@ header{
     padding: 10px;
 }
 
-header h1{
+header a{
     font-family: 'HunterPolice';
-    font-size: 2.5em;
+    font-size: 1.5em;
     color: rgb(255,25,25);
-    margin: 0 0 0 0px;
+    text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.75);
+
+    width: 970px;
+    display: block;
     text-align: center;
 }
 
-/*NAVIGATION*/
+header a:hover{
+    color: rgb(255,25,25);
+    text-shadow: 0px 0px 7px rgba(0, 0, 0, 1.75);
+}
+
+/* =====NAVIGATION===== */
 nav{
     display: flex;
     justify-content: space-around;
@@ -79,11 +107,7 @@ nav a{
     text-decoration: none; /*Supprime le soulignement*/
 }
 
-.nav:nth-child(4){
-    /*EN COURS*/
-}
-
-/*MAIN*/
+/* =====MAIN===== */
 section{
     display: flex;
     justify-content: space-around;
@@ -119,7 +143,7 @@ aside p{
     float: right;
 }
 
-/*FOOTER*/
+/* =====FOOTER===== */
 footer{
     display: flex;
     text-align:left;
@@ -128,7 +152,7 @@ footer{
     margin-left: 2em;
 }
 
-/*FORMULAIRE*/
+/* =====FORMULAIRES===== */
 form{    
     text-align: left;
     border-radius: 10px;
@@ -139,3 +163,58 @@ form{
 form .error{
     color: rgb(255, 25, 25);
 }
+
+/* =====WIKI===== */
+
+/* =====FORUM===== */
+#forum{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.post{
+    width: 480px;
+    height: 250px;
+    border-radius: 0px;
+    padding: 5px;
+    margin: 5px 5px;
+    background-color: rgb(140, 140, 140);
+    box-shadow: 0px 4px 6px black;
+}
+
+.post p{
+    width: 480px;
+    height: 150px;
+    word-wrap: break-word;
+    overflow:scroll;
+}
+
+.nom_post{
+    text-transform: uppercase;
+}
+
+#forum_creer{
+    border-radius: 10px;
+    padding: 10px;
+    margin: 15px 5px;
+    background-color: rgb(140, 140, 140);
+    box-shadow: 0px 4px 6px black;
+}
+
+.commentaire{
+    width: 1000px;
+    margin: auto;
+}
+
+/* =====COMMUNAUTE===== */
+
+
+
+
+
+
+

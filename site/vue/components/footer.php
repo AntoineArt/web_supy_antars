@@ -1,3 +1,11 @@
+<?php
+/*
+	Auteur: Frapiccini Benoît
+	Ce code correspond au pied de page du site.
+*/
+?>
+
+<hr/>
 <footer>
 	<div id="footer_contact">
 	    <h2>Contacts :</h1>
