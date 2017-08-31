@@ -9,7 +9,7 @@
 
 function nouveau_commentaire($id_billet, $pseudo, $contenu, $bdd)
 {
-	$req = $bdd->prepare('INSERT INTO commentaires(id_billet, auteur, contenu, date_creation) VALUES(:id_billet, :pseudo, :contenu, NOW())');
+	$req = $bdd->prepare('INSERT INTO commentaires(id_billet, auteur, contenu, date_commentaire) VALUES(:id_billet, :pseudo, :contenu, NOW())');
 	$req->execute(array(
 	    'id_billet' => $id_billet,
 	    'pseudo' => $pseudo,
