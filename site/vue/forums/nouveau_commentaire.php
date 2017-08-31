@@ -26,7 +26,7 @@
 
 		    <?php /*=====MAIN=====*/ ?>
 		    <section>
-				<form action="_main.php?section=nouveau_commentaire&amp;billet=<?php echo $_GET['billet']; ?>&amp;titre=<?php echo $_GET['titre'];?>" method="post">
+				<form action="_main.php?section=nouveau_commentaire" method="post">
 					<h1>Nouveau commentaire :</h1>
 				    <p> Contenu (max:5000char)<br/><textarea name="contenu" rows="20" cols="100" maxlength="5000"></textarea></p>
 				    <p> <input type="submit" value="Valider" /> </p>

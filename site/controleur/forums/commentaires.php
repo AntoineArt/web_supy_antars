@@ -13,6 +13,9 @@ include_once("modele/forums/commentaires.php");
 //Vérification des données IN PROGRESS
 if(isset($_GET['billet'])){
 	$id_billet = $_GET['billet'];
+	$_SESSION['id_billet'] = $id_billet;
+	$_SESSION['titre_billet'] = $_GET['titre'];
+
 }
 else{
 	$id_billet = $_SESSION['id_billet'];
