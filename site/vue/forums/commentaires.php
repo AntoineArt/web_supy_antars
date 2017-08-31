@@ -11,14 +11,7 @@
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="vue/stylesheet.css" />
 		<title>
-			<?php //On utilise le GET si accès direct, ou le SESSION si retour depuis un nouveau commentaire
-			if (isset($_GET["titre"])){
-				echo $_GET["titre"];
-			}
-			else{
-				echo $_SESSION["titre_billet"];
-			}
-			?>
+			<?php echo $_SESSION["titre_billet"]; ?>
 		</title>
 	</head>
 
@@ -48,7 +41,7 @@
 			<div id="commentaire_creer">
 				<?php
 				if(isset($_SESSION['pseudo'])){?>
-					<a href="_main.php?section=nouveau_commentaire&amp;billet=<?php echo $_GET['billet']; ?>&amp;titre=<?php echo $_GET['titre'];?>">Nouveau commentaire</a>
+					<a href="_main.php?section=nouveau_commentaire&amp;billet=<?php echo $_SESSION['id_billet']; ?>&amp;titre=<?php echo $_SESSION['titre_billet'];?>">Nouveau commentaire</a>
 				<?php
 				}
 				else{?>
