@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  jeu. 24 août 2017 à 17:33
+-- Généré le :  jeu. 31 août 2017 à 17:25
 -- Version du serveur :  5.6.35
 -- Version de PHP :  7.1.6
 
@@ -24,6 +24,7 @@ CREATE TABLE `billets` (
   `id` int(11) NOT NULL,
   `titre` varchar(255) NOT NULL,
   `contenu` text NOT NULL,
+  `auteur` varchar(255) NOT NULL,
   `date_creation` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -31,10 +32,13 @@ CREATE TABLE `billets` (
 -- Déchargement des données de la table `billets`
 --
 
-INSERT INTO `billets` (`id`, `titre`, `contenu`, `date_creation`) VALUES
-(1, 'test', 'c\'est un test', '2017-08-24 00:00:00'),
-(3, 'test2', 'c\'est un test2', '2017-08-24 00:01:00'),
-(4, 'test3', 'c\'est un test3', '2017-08-24 00:02:00');
+INSERT INTO `billets` (`id`, `titre`, `contenu`, `auteur`, `date_creation`) VALUES
+(1, 'Test6', 'Ceci est un test, wesh', 'Supytalp', '2017-08-27 15:10:03'),
+(2, 'Autre test', 'Un autre test, wesh alors', 'Supytalp', '2017-08-27 15:10:25'),
+(3, 'humhum.', 'WESH ALORS !\r\nWESH ALORS !\r\nWESH ALORS !\r\nWESH ALOOOOORS !', 'Supytalp', '2017-08-27 15:10:50'),
+(4, 'Wesh', 'lolololololololol', 'Supytalp', '2017-08-27 16:42:09'),
+(5, 'bijour', 'bijour', 'Supytalp', '2017-08-28 12:08:21'),
+(6, 'Nique ta mère', 'Antoine suce des queues', 'Supytalp', '2017-08-31 17:20:17');
 
 -- --------------------------------------------------------
 
@@ -46,9 +50,18 @@ CREATE TABLE `commentaires` (
   `id` int(11) NOT NULL,
   `id_billet` int(11) NOT NULL,
   `auteur` varchar(255) NOT NULL,
-  `commentaire` text NOT NULL,
+  `contenu` text NOT NULL,
   `date_commentaire` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `commentaires`
+--
+
+INSERT INTO `commentaires` (`id`, `id_billet`, `auteur`, `contenu`, `date_commentaire`) VALUES
+(1, 4, 'Stalin', 'Priviet !', '2017-08-20 00:00:00'),
+(2, 4, 'WOLOLOOOO', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec sagittis massa. Nulla facilisi. Cras id arcu lorem, et semper purus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis vel enim mi, in lobortis sem. Vestibulum luctus elit eu libero ultrices id fermentum sem sagittis. Nulla imperdiet mauris sed sapien dignissim id aliquam est aliquam. Maecenas non odio ipsum, a elementum nisi. Mauris non erat eu erat placerat convallis. Mauris in pretium urna. Cras laoreet molestie odio, consequat consequat velit commodo eu. Integer vitae lectus ac nunc posuere pellentesque non at eros. Suspendisse non lectus lorem.\r\nVivamus sed libero nec mauris pulvinar facilisis ut non sem. Quisque mollis ullamcorper diam vel faucibus. Vestibulum sollicitudin facilisis feugiat. Nulla euismod sodales hendrerit. Donec quis orci arcu. Vivamus fermentum magna a erat ullamcorper dignissim pretium nunc aliquam. Aenean pulvinar condimentum enim a dignissim. Vivamus sit amet lectus at ante adipiscing adipiscing eget vitae felis. In at fringilla est. Cras id velit ut magna rutrum commodo. Etiam ut scelerisque purus. Duis risus elit, venenatis vel rutrum in, imperdiet in quam. Sed vestibulum, libero ut bibendum consectetur, eros ipsum ultrices nisl, in rutrum diam augue non tortor. Fusce nec massa et risus dapibus aliquam vitae nec diam.\r\nPhasellus ligula massa, congue ac vulputate non, dignissim at augue. Sed auctor fringilla quam quis porttitor. Praesent vitae dignissim magna. Pellentesque quis sem purus, vel elementum mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas consectetur euismod urna. In hac habitasse platea dictumst. Quisque tincidunt porttitor vestibulum. Ut iaculis, lacus at molestie lacinia, ipsum mi adipiscing ligula, vel mollis sem risus eu lectus. Nunc elit quam, rutrum ut dignissim sit amet, egestas at sem. Wesh.', '2017-08-28 00:00:00'),
+(4, 4, 'Supytalp', 'test', '2017-08-28 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -69,7 +82,7 @@ CREATE TABLE `membres` (
 --
 
 INSERT INTO `membres` (`id`, `pseudo`, `mdp`, `email`, `date_inscription`) VALUES
-(2, 'supytalp', 'cba21f3c76277e9ac0c1d19ef8e542d62aaef3ad98feff58c12e47e6f830cf33ec8a4e23bb0082a38fc559cc321ba08704dc740db7991352ac5316d402045e00', 'test', '2017-08-24');
+(1, 'Supytalp', '041cfc785dbfc45ae429377376519ca9be80433589341825b8b1f4999f856905b728b7075c653fb0adfd82f0803ea3d140d4e282a32dcac6207f9daf3dc92341', 'test', '2017-08-25');
 
 --
 -- Index pour les tables déchargées
@@ -91,7 +104,8 @@ ALTER TABLE `commentaires`
 -- Index pour la table `membres`
 --
 ALTER TABLE `membres`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `pseudo` (`pseudo`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -101,14 +115,14 @@ ALTER TABLE `membres`
 -- AUTO_INCREMENT pour la table `billets`
 --
 ALTER TABLE `billets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `membres`
 --
 ALTER TABLE `membres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
