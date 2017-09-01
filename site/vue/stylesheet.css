@@ -190,7 +190,8 @@ form .error{
     width: 480px;
     height: 150px;
     word-wrap: break-word;
-    overflow:scroll;
+    /*Origine du bug des barres blanches si passé en "scrool"; Utilisation de "hidden" à la place*/
+    overflow: hidden;
 }
 
 .nom_post{

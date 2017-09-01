@@ -27,7 +27,7 @@
 		    <section>
 				<form action="_main.php?section=nouveau_billet" method="post">
 					<h1>Nouveau billet :</h1>
-					<p> Titre <input type="text" name="titre" /> </p>
+					<p> Titre (max:40char)<input type="text" name="titre" maxlength="40"/> </p>
 				    <p> Contenu (max:5000char)<br/><textarea name="contenu" rows="20" cols="100" maxlength="5000"></textarea></p>
 				    <p> <input type="submit" value="Valider" /> </p>
 				</form>

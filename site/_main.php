@@ -23,6 +23,10 @@ else
 {
 	switch ($_GET['section'])
 	{
+		//News
+		case 'mainnews':
+		break;
+
 		//Wiki
 		case 'mainwiki':
 		include_once("vue/wiki/mainwiki.html");
@@ -43,10 +47,6 @@ else
 
 		case 'nouveau_commentaire':
 		include_once("controleur/forums/nouveau_commentaire.php");
-		break;
-
-		//Communauté
-		case 'maincommunaute':
 		break;
 
 		//Identification

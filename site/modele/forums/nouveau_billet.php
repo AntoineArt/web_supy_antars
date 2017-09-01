@@ -17,12 +17,13 @@ function nouveau_billet($titre, $contenu, $pseudo, $bdd)
 	    'pseudo' => $pseudo
 	    ));
 
-	include('modele/connexion_bdd.php');
-	//Because fuck Max()
-	$id = $bdd->prepare('SELECT id FROM billets ORDER BY id DESC LIMIT 1');
-	$id->execute();
-	$id = $id->fetch();
-	$id = (int) $id;
+	$id = $bdd->prepare('SELECT Max(id) FROM billets');
+	$id->execute(array(
+		'pseudo' => $pseudo,
+		'titre' => $titre,
+		'contenu' => $contenu
+		));
+	$id = $id->fetchColumn(); // /!\ fetchColums et non pas fetch
 
 	return $id;
 }

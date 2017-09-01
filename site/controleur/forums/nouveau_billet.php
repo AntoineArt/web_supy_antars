@@ -10,7 +10,6 @@ if(isset($_POST['titre']) AND isset($_POST['contenu']) AND isset($_SESSION['pseu
 
 	include_once("modele/connexion_bdd.php");
 	include_once("modele/forums/nouveau_billet.php");
-	include_once("modele/forums/get_id_billet.php");
 	include_once("modele/forums/nouveau_commentaire.php");
 
 	// Vérification des informations IN PROGRESS
@@ -21,11 +20,10 @@ if(isset($_POST['titre']) AND isset($_POST['contenu']) AND isset($_SESSION['pseu
 	// Création du billet dans la bdd
 	$id = nouveau_billet($titre, $contenu, $pseudo, $bdd);
 	// Ajout du contenu du billet comme premier commentaire du billet
-	//nouveau_commentaire($id, $pseudo, $contenu, $bdd);
-	echo $id;
+	nouveau_commentaire($id, $pseudo, $contenu, $bdd);
 
-	//header('location: _main.php?section=mainforums');
-	//exit();
+	header('location: _main.php?section=mainforums');
+	exit();
 }
 else
 {

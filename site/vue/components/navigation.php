@@ -7,9 +7,9 @@
 ?>
 
 <nav>
+	<p><a href="./_main.php?section=mainnews" title="Quoi de neuf ?">News</a></p>
 	<p><a href="./_main.php?section=mainwiki" title="Pour en apprendre plus sur ce monde fantastique !">Wiki</a></p>
 	<p><a href="./_main.php?section=mainforums" title="Pour partager vos expériences avec d'autres aventuriers !">Forums</a></p>
-	<p><a href="./_main.php?section=maincommunaute" title="Pour découvrir les derniers fan arts !">Communauté</a></p>
 
 	<?php
 	if(!isset($_SESSION['pseudo'])){
