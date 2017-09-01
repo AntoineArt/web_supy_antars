@@ -26,7 +26,9 @@
 
 			<?php /*=====MAIN=====*/ ?>
 
-			<div id="forum">
+			<h2><?php echo $_SESSION["titre_billet"]; ?></h2>
+
+			<div id="commentaires">
 				<?php
 				foreach($commentaires as $commentaires){?>
 					<div class="commentaire">
