@@ -13,15 +13,22 @@
 
 session_start();
 $_SESSION['error']=0;
-include_once("controleur/identification/autoconnect.php");
+include_once('controleur/identification/autoconnect.php');
 
 if (!isset($_GET['section']) OR $_GET['section'] == 'mainpage')
 {
-    include_once("vue/mainpage/mainpage.php");
+    include_once('vue/mainpage/mainpage.php');
 }
 else
 {
-	switch ($_GET['section'])
+	if(isset($_SESSION['dynamic_adress'])){
+		$section = $_SESSION['dynamic_adress'];
+		$_SESSION['dynamic_adress'] = '';
+	}
+	else{
+		$section = $_GET['section'];
+	}
+	switch ($section)
 	{
 		//News
 		case 'mainnews':
@@ -29,41 +36,41 @@ else
 
 		//Wiki
 		case 'mainwiki':
-		include_once("vue/wiki/mainwiki.html");
+		include_once('vue/wiki/mainwiki.html');
 		break;
 
 		//Forums
 		case 'mainforums':
-		include_once("controleur/forums/index.php");
+		include_once('controleur/forums/index.php');
 		break;
 
 		case 'nouveau_billet':
-		include_once("controleur/forums/nouveau_billet.php");
+		include_once('controleur/forums/nouveau_billet.php');
 		break;
 
 		case 'commentaires':
-		include_once("controleur/forums/commentaires.php");
+		include_once('controleur/forums/commentaires.php');
 		break;
 
 		case 'nouveau_commentaire':
-		include_once("controleur/forums/nouveau_commentaire.php");
+		include_once('controleur/forums/nouveau_commentaire.php');
 		break;
 
 		//Identification
 		case 'connexion':
-		include_once("controleur/identification/connexion.php");
+		include_once('controleur/identification/connexion.php');
 		break;
 
 		case 'deconnexion':
-		include_once("controleur/identification/deconnexion.php");
+		include_once('controleur/identification/deconnexion.php');
 		break;
 
 		case 'inscription':
-		include_once("controleur/identification/inscription.php");
+		include_once('controleur/identification/inscription.php');
 		break;
 
 		//Rip
 		default:
-			echo ("Sorry, nothing to see here.");
+			echo ('Sorry, nothing to see here.');
 	}
 }
