@@ -23,7 +23,6 @@
 			<?php /*=====NAVIGATION=====*/ ?>
         	<?php include("./vue/components/navigation.php"); ?>
 
-
 		    <?php /*=====MAIN=====*/ ?>
 		    <section>
 				<form action="_main.php?section=nouveau_billet" method="post">
