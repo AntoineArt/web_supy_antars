@@ -2,7 +2,7 @@
 /*
 	Auteur: Frapiccini Benoît
 	Cette fonction renvoie la liste des billets (ou début de posts) rangés par date de création décroissante,
-	et compris dans l'intervalle donné (le max étant exclusif et le min inclusif).
+	et compris dans l'intervalle donné (le max étant exclusif et le min inclusif)
 */
 
 function billets($min, $max, $bdd)
