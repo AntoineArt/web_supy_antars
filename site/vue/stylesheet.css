@@ -1,6 +1,6 @@
 /*
     Auteurs: Frapiccini Benoît & Artillan Antoine
-*/
+    */
 
 /* index:
 - general
@@ -65,8 +65,8 @@ strong{
 header{
     /*Image trop grande, il faut la centrer*/
     background: url('images/bannière.jpg') repeat-x bottom;
-	background-size:cover;
-	margin: 10px 5px;
+    background-size:cover;
+    margin: 10px 5px;
     display: flex;
     border-radius: 10px;
     box-shadow: 0px 4px 6px black;
@@ -209,6 +209,7 @@ form .error{
 .commentaire{
     width: 1000px;
     margin: auto;
+    word-wrap: break-word;
 }
 
 #commentaire_creer{

@@ -11,35 +11,40 @@
 	/!\ Les liens vers d'autres fichiers auront toujours comme origine la racine, car les pages sont construites ici !
 */
 
-session_start();
-$_SESSION['error']=0;
-include_once('controleur/identification/autoconnect.php');
+	session_start();
+	$_SESSION['error']=0;
+	include_once('controleur/identification/autoconnect.php');
 
-if (!isset($_GET['section']) OR $_GET['section'] == 'mainpage')
-{
-    include_once('vue/mainpage/mainpage.php');
-}
-else
-{
-	if(isset($_SESSION['dynamic_adress'])){
-		$section = $_SESSION['dynamic_adress'];
-		$_SESSION['dynamic_adress'] = '';
+	// On regarde d'abord si on est renvoyé sur une section dynamique
+	if($_GET['section'] == 'dynamic_section'){
+		$section = $_SESSION['dynamic_section'];
 	}
+	// On regarde ensuite si l'utilisateur est nouveau
+	elseif(!isset($_GET['section'])){
+		include_once('vue/mainpage/mainpage.php');
+	}
+	// Sinon, on utilise la redirection de l'URL
 	else{
 		$section = $_GET['section'];
 	}
+
 	switch ($section)
 	{
-		//News
+		// Mainpage
+		case 'mainpage':
+		include_once('vue/mainpage/mainpage.php');
+		break;
+
+		// News
 		case 'mainnews':
 		break;
 
-		//Wiki
+		// Wiki
 		case 'mainwiki':
 		include_once('vue/wiki/mainwiki.html');
 		break;
 
-		//Forums
+		// Forums
 		case 'mainforums':
 		include_once('controleur/forums/index.php');
 		break;
@@ -56,7 +61,7 @@ else
 		include_once('controleur/forums/nouveau_commentaire.php');
 		break;
 
-		//Identification
+		// Identification
 		case 'connexion':
 		include_once('controleur/identification/connexion.php');
 		break;
@@ -69,8 +74,7 @@ else
 		include_once('controleur/identification/inscription.php');
 		break;
 
-		//Rip
+		// Rip
 		default:
-			echo ('Sorry, nothing to see here.');
+		echo ('Sorry, nothing to see here.');
 	}
-}

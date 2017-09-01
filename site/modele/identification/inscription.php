@@ -7,12 +7,12 @@
 	/!\ La requête est préparée avant d'être éxécutée afin de protéger la base de donnée !
 */
 
-function inscription($pseudo, $mdpS, $email, $bdd)
-{
-	$req = $bdd->prepare('INSERT INTO membres(pseudo, mdp, email, date_inscription) VALUES(:pseudo, :mdp, :email, CURDATE())');
-	$req->execute(array(
-	    'pseudo' => $pseudo,
-	    'mdp' => $mdpS,
-	    'email' => $email
-	    ));
-}
+	function inscription($pseudo, $mdpS, $email, $bdd)
+	{
+		$req = $bdd->prepare('INSERT INTO membres(pseudo, mdp, email, date_inscription) VALUES(:pseudo, :mdp, :email, CURDATE())');
+		$req->execute(array(
+			'pseudo' => $pseudo,
+			'mdp' => $mdpS,
+			'email' => $email
+			));
+	}

@@ -6,25 +6,25 @@
 	/!\ Les mots de passe sont toujours stockés sous forme cryptée dans la base de donnée !
 */
 
-if(isset($_POST['pseudo']) AND isset($_POST['mdp']) AND isset($_POST['mdp2']) AND isset($_POST['email']))
-{
-	include_once('modele/connexion_bdd.php');
-	include_once('modele/identification/inscription.php');
+	if(isset($_POST['pseudo']) AND isset($_POST['mdp']) AND isset($_POST['mdp2']) AND isset($_POST['email']))
+	{
+		include_once('modele/connexion_bdd.php');
+		include_once('modele/identification/inscription.php');
 
 	// Vérification des informations IN PROGRESS
-	$pseudo = $_POST['pseudo'];
-	$email = $_POST['email'];
+		$pseudo = $_POST['pseudo'];
+		$email = $_POST['email'];
 
 	// Hachage du mot de passe
-	$mdpS = hash('sha512',$_POST['mdp']);
-	
+		$mdpS = hash('sha512',$_POST['mdp']);
+		
 	// Inscription effective
-	inscription($pseudo, $mdpS, $email, $bdd);
+		inscription($pseudo, $mdpS, $email, $bdd);
 
-	header('location: _main.php?section=connexion');
-	exit();
-}
-else
-{
-	include_once("vue/identification/inscription.php");
-}
+		header('location: _main.php?section=dynamic_section');
+		exit();
+	}
+	else
+	{
+		include_once("vue/identification/inscription.php");
+	}
