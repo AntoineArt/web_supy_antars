@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
 	Auteur: Frapiccini Benoît
 	Ce programme permet la création d'un nouveau billet.
@@ -10,6 +10,8 @@ if(isset($_POST['titre']) AND isset($_POST['contenu']) AND isset($_SESSION['pseu
 
 	include_once("modele/connexion_bdd.php");
 	include_once("modele/forums/nouveau_billet.php");
+	include_once("modele/forums/get_billet.php");
+	include_once("modele/forums/nouveau_commentaire.php");
 
 	// Vérification des informations IN PROGRESS
 	$titre = $_POST['titre'];
@@ -18,6 +20,9 @@ if(isset($_POST['titre']) AND isset($_POST['contenu']) AND isset($_SESSION['pseu
 
 	// Création du billet dans la bdd
 	nouveau_billet($titre, $contenu, $pseudo, $bdd);
+	// Ajout du contenu du billet comme premier commentaire du billet
+	$com = get_billet($pseudo, $titre, $bdd);
+	nouveau_commentaire($com, $pseudo, $contenu, $bdd);
 
 	header('location: _main.php?section=mainforums');
 	exit();

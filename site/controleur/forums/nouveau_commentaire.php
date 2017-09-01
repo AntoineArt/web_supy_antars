@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
 	Auteur: Frapiccini Benoît
 	Ce programme permet la création d'un nouveau commentaire.
@@ -21,7 +21,7 @@ if(isset($_POST['contenu']) AND isset($_SESSION['pseudo']))
 	nouveau_commentaire($id_billet, $pseudo, $contenu, $bdd);
 
 	//Passage des informations dans la session (le header ne peut en renvoyer qu'une dans l'URL)
-	if(isset($_GET['titre'])){ //Au cas ou on créée plusieurs commentaires d'affilée
+	if(isset($_GET['titre'])){ //Au cas ou on créé plusieurs commentaires d'affilée
 		$_SESSION['id_billet'] = $id_billet;
 		$_SESSION['titre_billet'] = $_GET['titre'];
 	}
