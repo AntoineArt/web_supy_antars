@@ -14,7 +14,7 @@ function commentaires($min, $max, $id_billet, $bdd)
     
     $req = $bdd->prepare('SELECT auteur, contenu, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS date_fr
        FROM commentaires WHERE id_billet=:id_billet ORDER BY date_commentaire LIMIT :min, :max');
-    // Les paramètres de fonction sont importants, sinon les valeurs ne seront pas respectées (et puis il y a des erreurs ...)
+    // On force le type
     $req->bindParam(':min', $min, PDO::PARAM_INT);
     $req->bindParam(':max', $max, PDO::PARAM_INT);
     $req->bindParam(':id_billet', $id_billet, PDO::PARAM_INT);
