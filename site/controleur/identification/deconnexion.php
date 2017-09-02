@@ -11,9 +11,9 @@
 $_SESSION['pseudo'] = NULL; //On préfèrera cette méthode pour préserver les sections dynamiques
 
 // Suppression des cookies
-setcookie("login", "", time() + 365*24*3600, null, null, false, true);
-setcookie("mdpS", "", time() + 365*24*3600, null, null, false, true);
-setcookie("autoconnect", "", time() + 365*24*3600, null, null, false, true);
+setcookie('login', '', time() + 365*24*3600, null, null, false, true);
+setcookie('mdpS', '', time() + 365*24*3600, null, null, false, true);
+setcookie('autoconnect', '', time() + 365*24*3600, null, null, false, true);
 
-header("location: _main.php?section=dynamic_section");
+header('location: _main.php?section=dynamic_section');
 exit();

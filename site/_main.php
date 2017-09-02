@@ -12,21 +12,24 @@
 */
 
 session_start();
-$_SESSION['error']=0;
+$_SESSION['error'] = 0;
 include_once('controleur/identification/autoconnect.php');
+include_once('controleur/fonctions/secure.php');
 
 // On regarde d'abord si l'utilisateur est nouveau
 if(!isset($_GET['section'])){
 	include_once('vue/mainpage/mainpage.php');
 }
 else{
+	// On sécurise l'entrée
+	$data = secure_get($_GET['section']);
 	// On regarde ensuite si on est renvoyé sur une section dynamique
-	if($_GET['section'] == 'dynamic_section'){
+	if($data == 'dynamic_section'){
 		$section = $_SESSION['dynamic_section'];
 	}
 	// Sinon, on utilise la redirection de l'URL
 	else{
-		$section = $_GET['section'];
+		$section = $data;
 	}
 
 	switch ($section){

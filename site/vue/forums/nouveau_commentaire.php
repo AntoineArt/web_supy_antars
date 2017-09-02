@@ -15,26 +15,26 @@ La taille du contenu est limitée à 5000 caractères.
 </head>
 
 <body>
-	<div id="page">
+	<div id='page'>
 
 		<?php /*=====HEADER=====*/ ?>
-		<?php include("vue/components/header.php"); ?>
+		<?php include('vue/components/header.php'); ?>
 
 		<?php /*=====NAVIGATION=====*/ ?>
-		<?php include("vue/components/navigation.php"); ?>
+		<?php include('vue/components/navigation.php'); ?>
 
 
 		<?php /*=====MAIN=====*/ ?>
 		<section>
-			<form action="_main.php?section=nouveau_commentaire" method="post">
+			<form action='_main.php?section=nouveau_commentaire' method='post'>
 				<h1>Nouveau commentaire :</h1>
-				<p> Contenu (max:5000char)<br/><textarea name="contenu" rows="20" cols="100" maxlength="5000"></textarea></p>
-				<p> <input type="submit" value="Valider" /> </p>
+				<p> Contenu (max:5000char)<br/><textarea name='contenu' rows='20' cols='100' maxlength='5000'></textarea></p>
+				<p> <input type='submit' value='Valider' /> </p>
 			</form>
 		</section>
 
 		<?php /*=====FOOTER=====*/ ?>
-		<?php include("vue/components/footer.php"); ?>
+		<?php include('vue/components/footer.php'); ?>
 
 	</div>
 </body>

@@ -17,27 +17,27 @@ Ce code correspond à l'index du forum.
 </head>
 
 <body>
-	<div id="page">
+	<div id='page'>
 
 		<?php /*=====HEADER=====*/ ?>
-		<?php include("vue/components/header.php"); ?>
+		<?php include('vue/components/header.php'); ?>
 
 		<?php /*=====NAVIGATION=====*/ ?>
-		<?php include("./vue/components/navigation.php"); ?>
+		<?php include('./vue/components/navigation.php'); ?>
 
 		<?php /*=====MAIN=====*/ ?>
 
-		<div id="forum_creer">
-			<a href="_main.php?section=nouveau_billet">Nouveau billet</a>
+		<div id='forum_creer'>
+			<a href='_main.php?section=nouveau_billet'>Nouveau billet</a>
 		</div>
 
-		<div id="forum">
+		<div id='forum'>
 
 			<?php
 			foreach($billets as $billet){?>
-				<div class="post">
-					<div class="nom_post"><?php echo $billet['titre'];?></div>
-					<div class="infos_post">Par <strong><?php echo $billet['auteur'];?></strong> le <?php echo $billet['date_fr']; ?></div>
+				<div class='post'>
+					<div class='nom_post'><?php echo $billet['titre'];?></div>
+					<div class='infos_post'>Par <strong><?php echo $billet['auteur'];?></strong> le <?php echo $billet['date_fr']; ?></div>
 					<br/>
 					<a href="_main.php?section=commentaires&amp;billet=<?php echo $billet['id'];?>&amp;titre=<?php echo $billet['titre'];?>">Réponses</a>
 					<hr/>
@@ -48,7 +48,7 @@ Ce code correspond à l'index du forum.
 		</div>
 
 		<?php /*=====FOOTER=====*/ ?>
-		<?php include("./vue/components/footer.php"); ?>
+		<?php include('./vue/components/footer.php'); ?>
 
 	</div>
 </body>

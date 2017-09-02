@@ -12,11 +12,12 @@ if(isset($_COOKIE['autoconnect']) AND isset($_COOKIE['pseudo']) AND isset($_COOK
 	include_once("modele/connexion_bdd.php");
 	include_once("modele/identification/connexion.php");
 
-	// Vérification des informations IN PROGRESS
-	$pseudo = $_COOKIE['pseudo'];
-	$mdpS = $_COOKIE['mdpS'];
+	// Sécurisation des informations
+	$pseudo = secure_bdd(secure_get($_COOKIE['pseudo']));
+	$mdpS = secure_bdd(secure_get($_COOKIE['mdpS']));
 
-	//On vérifie si le couple id/mdpS est dans la base de données
+	// On vérifie si le couple id/mdpS est dans la base de données
+	//FAILLE DE SECURITE ; VERIFIER LE COUPLE ID/MDP AVANT
 	if(liste_comptes($pseudo, $mdpS, $bdd)){
 		setcookie('pseudo', $pseudo, time() + 365*24*3600, null, null, false, true);
 		setcookie('mdpS', $mdpS, time() + 365*24*3600, null, null, false, true);

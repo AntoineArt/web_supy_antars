@@ -13,9 +13,9 @@ if(!isset($_SESSION['pseudo'])){
 // Si le formulaire html a été rempli
 elseif(isset($_POST['titre']) AND isset($_POST['contenu']) AND isset($_SESSION['pseudo'])){
 
-	include_once("modele/connexion_bdd.php");
-	include_once("modele/forums/nouveau_billet.php");
-	include_once("modele/forums/nouveau_commentaire.php");
+	include_once('modele/connexion_bdd.php');
+	include_once('modele/forums/nouveau_billet.php');
+	include_once('modele/forums/nouveau_commentaire.php');
 
 	// Vérification des informations IN PROGRESS
 	$titre = $_POST['titre'];
@@ -32,5 +32,5 @@ elseif(isset($_POST['titre']) AND isset($_POST['contenu']) AND isset($_SESSION['
 }
 else{
 	$_SESSION['dynamic_section'] = 'nouveau_billet';
-	include_once("vue/forums/nouveau_billet.php");
+	include_once('vue/forums/nouveau_billet.php');
 }

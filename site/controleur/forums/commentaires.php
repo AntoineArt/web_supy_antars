@@ -7,8 +7,8 @@
 	/!\ Les données ne sont pas traitées comme dans l'index (par ex), car cela provoque une erreur de type "illegal string offset"
 */
 
-include_once("modele/connexion_bdd.php");
-include_once("modele/forums/commentaires.php");
+include_once('modele/connexion_bdd.php');
+include_once('modele/forums/commentaires.php');
 
 //Vérification des données IN PROGRESS
 if(isset($_GET['billet'])){
