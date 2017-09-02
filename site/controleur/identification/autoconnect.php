@@ -8,21 +8,20 @@
 	/!\ L'identifiant est unique pour chaque utilisateur !
 */
 
-	if(isset($_COOKIE['autoconnect']) AND isset($_COOKIE['pseudo']) AND isset($_COOKIE['mdpS']))
-	{
-		include_once("modele/connexion_bdd.php");
-		include_once("modele/identification/connexion.php");
+if(isset($_COOKIE['autoconnect']) AND isset($_COOKIE['pseudo']) AND isset($_COOKIE['mdpS'])){
+	include_once("modele/connexion_bdd.php");
+	include_once("modele/identification/connexion.php");
 
 	// Vérification des informations IN PROGRESS
-		$pseudo = $_COOKIE['pseudo'];
-		$mdpS = $_COOKIE['mdpS'];
+	$pseudo = $_COOKIE['pseudo'];
+	$mdpS = $_COOKIE['mdpS'];
 
 	//On vérifie si le couple id/mdpS est dans la base de données
-		if(liste_comptes($pseudo, $mdpS, $bdd)){
-			setcookie('pseudo', $pseudo, time() + 365*24*3600, null, null, false, true);
-			setcookie('mdpS', $mdpS, time() + 365*24*3600, null, null, false, true);
-			setcookie('autoconnect', 1, time() + 365*24*3600, null, null, false, true);
-			$_SESSION['pseudo'] = $pseudo;
+	if(liste_comptes($pseudo, $mdpS, $bdd)){
+		setcookie('pseudo', $pseudo, time() + 365*24*3600, null, null, false, true);
+		setcookie('mdpS', $mdpS, time() + 365*24*3600, null, null, false, true);
+		setcookie('autoconnect', 1, time() + 365*24*3600, null, null, false, true);
+		$_SESSION['pseudo'] = $pseudo;
 
-		}
 	}
+}

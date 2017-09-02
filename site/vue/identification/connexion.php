@@ -1,36 +1,36 @@
 <?php
 /*
-	Auteur: Frapiccini Benoît
-	Ce code correspond à la page de connexion.
+Auteur: Frapiccini Benoît
+Ce code correspond à la page de connexion.
 */
-	?>
+?>
 
-	<!DOCTYPE html>
-	<html>
-	<head>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" href="vue/stylesheet.css" />
-		<title>Connexion</title>
-	</head>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="vue/stylesheet.css" />
+	<title>Connexion</title>
+</head>
 
-	<body>
-		<div id="page">
+<body>
+	<div id="page">
 
-			<?php /*=====HEADER=====*/ ?>
-			<?php include("vue/components/header.php"); ?>
+		<?php /*=====HEADER=====*/ ?>
+		<?php include("vue/components/header.php"); ?>
 
-			<?php /*=====NAVIGATION=====*/ ?>
-			<?php include("./vue/components/navigation.php"); ?>
+		<?php /*=====NAVIGATION=====*/ ?>
+		<?php include("./vue/components/navigation.php"); ?>
 
 
-			<?php /*=====MAIN=====*/ ?>
-			<section>
-				<form action="_main.php?section=connexion" method="post">
-					<h1>Connexion :</h1>
-					<?php
-					if($_SESSION['error']==1){?>
-					<div class="error"><p>Informations erronées</p></div>
-					<?php
+		<?php /*=====MAIN=====*/ ?>
+		<section>
+			<form action="_main.php?section=connexion" method="post">
+				<h1>Connexion :</h1>
+				<?php
+				if($_SESSION['error']==1){?>
+				<div class="error"><p>Informations erronées</p></div>
+				<?php
 				}?>
 				<p> Pseudo <input type="text" name="pseudo" /> </p>
 				<p> Mot de passe <input type="password" name="mdp" /> </p>

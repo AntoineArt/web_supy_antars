@@ -7,13 +7,13 @@
 	/!\ La requête est préparée avant d'être éxécutée afin de protéger la base de donnée !
 */
 
-	function liste_comptes($pseudo, $mdpS, $bdd)
-	{
-		$req = $bdd->prepare('SELECT id FROM membres WHERE pseudo = :pseudo AND mdp = :mdp');
-		$req->execute(array(
-			'pseudo' => $pseudo,
-			'mdp' => $mdpS));
+function liste_comptes($pseudo, $mdpS, $bdd)
+{
+	$req = $bdd->prepare('SELECT id FROM membres WHERE pseudo = :pseudo AND mdp = :mdp');
+	$req->execute(array(
+		'pseudo' => $pseudo,
+		'mdp' => $mdpS));
 
-		$result = $req->fetch();
-		return $result;
-	}
+	$result = $req->fetch();
+	return $result;
+}
