@@ -30,10 +30,10 @@
 
 		<div id='commentaires'>
 			<?php
-			foreach($commentaires as $commentaires){?>
+			foreach($commentaires as $commentaire){?>
 			<div class="commentaire">
-				<div class='infos_commentaire'>Par <strong><?php echo $commentaires['auteur'];?></strong> le <?php echo $commentaires['date_fr']; ?></div>
-				<div class='contenu_commentaire'><p> <?php echo $commentaires['contenu']; ?> </p></div>
+				<div class='infos_commentaire'>Par <strong><?php echo $commentaire['auteur'];?></strong> le <?php echo $commentaire['date_fr']; ?></div>
+				<div class='contenu_commentaire'><p> <?php echo nl2br($commentaire['contenu']); ?> </p></div>
 				<hr/>
 			</div>
 			<?php

@@ -16,7 +16,7 @@ function secure_bdd($data)
     // Autres cas
     else
     {
-        $data = string($data);
+        $data = strval($data);
         $data = addcslashes($data, '%_');
     }
 

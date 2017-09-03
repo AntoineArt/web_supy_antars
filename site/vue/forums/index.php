@@ -39,9 +39,9 @@ Ce code correspond à l'index du forum.
 					<div class='nom_post'><?php echo $billet['titre'];?></div>
 					<div class='infos_post'>Par <strong><?php echo $billet['auteur'];?></strong> le <?php echo $billet['date_fr']; ?></div>
 					<br/>
-					<a href="_main.php?section=commentaires&amp;billet=<?php echo $billet['id'];?>&amp;titre=<?php echo $billet['titre'];?>">Réponses</a>
+					<a href="_main.php?section=commentaires&amp;billet=<?php echo $billet['id'];?>&amp;titre=<?php echo $billet['titre'];?>">Voir la discussion</a>
 					<hr/>
-					<p> <?php echo $billet['contenu']; ?> </p>
+					<p> <?php echo nl2br($billet['contenu']); ?> </p>
 				</div>
 			<?php
 			}?>
