@@ -16,7 +16,7 @@ function secure_bdd($data)
     // Autres cas
     else
     {
-        $data = mysql_real_escape_string($data);
+        $data = $mysqli->real_escape_string($data);
         $data = addcslashes($data, '%_');
     }
     

@@ -18,9 +18,9 @@ elseif(isset($_POST['contenu']) AND isset($_SESSION['pseudo'])){
 	include_once('modele/forums/nouveau_commentaire.php');
 
 	// Vérification des informations IN PROGRESS
-	$id_billet = $_SESSION['id_billet'];
-	$pseudo = $_SESSION['pseudo'];
-	$contenu = $_POST['contenu'];
+	$id_billet = secure_bdd($_SESSION['id_billet']);
+	$pseudo = secure_bdd($_SESSION['pseudo']);
+	$contenu = secure_bdd(secure_data($_POST['contenu']));
 
 	// Création du billet dans la bdd
 	nouveau_commentaire($id_billet, $pseudo, $contenu, $bdd);
@@ -28,7 +28,7 @@ elseif(isset($_POST['contenu']) AND isset($_SESSION['pseudo'])){
 	//Passage des informations dans la session (le header ne peut en renvoyer qu'une dans l'URL)
 	if(isset($_GET['titre'])){ //Au cas ou on créé plusieurs commentaires d'affilée
 		$_SESSION['id_billet'] = $id_billet;
-		$_SESSION['titre_billet'] = $_GET['titre'];
+		$_SESSION['titre_billet'] = secure_data($_GET['titre']); // /!\ à vérifier
 	}
 	header('location: _main.php?section=commentaires');
 	exit();
