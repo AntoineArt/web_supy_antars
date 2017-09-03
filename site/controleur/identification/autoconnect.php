@@ -13,8 +13,8 @@ if(isset($_COOKIE['autoconnect']) AND isset($_COOKIE['pseudo']) AND isset($_COOK
 	include_once("modele/identification/connexion.php");
 
 	// Sécurisation des informations
-	$pseudo = secure_bdd(secure_get($_COOKIE['pseudo']));
-	$mdpS = secure_bdd(secure_get($_COOKIE['mdpS']));
+	$pseudo = secure_bdd(secure_data($_COOKIE['pseudo']));
+	$mdpS = secure_bdd(secure_data($_COOKIE['mdpS']));
 
 	// On vérifie si le couple id/mdpS est dans la base de données
 	//FAILLE DE SECURITE ; VERIFIER LE COUPLE ID/MDP AVANT

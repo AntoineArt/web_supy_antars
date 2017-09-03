@@ -13,10 +13,10 @@ if(isset($_POST['pseudo']) AND isset($_POST['mdp']) AND isset($_POST['mdp2']) AN
 	include_once('controleur/fonctions/is_email.php');
 
 	// Sécurisation des informations
-	$pseudo = secure_bdd(secure_post($_POST['pseudo']));
-	$mdp = secure_bdd(secure_post($_POST['mdp']));
-	$mdp2 = secure_post($_POST['mdp2']);
-	$email = secure_bdd(secure_post($_POST['email']));
+	$pseudo = secure_bdd(secure_data($_POST['pseudo']));
+	$mdp = secure_bdd(secure_data($_POST['mdp']));
+	$mdp2 = secure_data($_POST['mdp2']);
+	$email = secure_bdd(secure_data($_POST['email']));
 
 	// Vérification des conditions
 	$liste = get_pseudo($pseudo, $bdd);

@@ -14,8 +14,8 @@ if(isset($_POST['pseudo']) AND isset($_POST['mdp'])){
 	include_once('modele/identification/connexion.php');
 
 	// Sécurisation des informations
-	$pseudo = secure_bdd(secure_post($_POST['pseudo']));
-	$mdp = secure_bdd(secure_post($_POST['mdp']));
+	$pseudo = secure_bdd(secure_data($_POST['pseudo']));
+	$mdp = secure_bdd(secure_data($_POST['mdp']));
 
 	//On crypte le mot de passe pour effectuer la vérification
 	$mdpS = hash('sha512', $mdp);
