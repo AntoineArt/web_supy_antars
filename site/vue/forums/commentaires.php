@@ -32,12 +32,23 @@
 			<?php
 			foreach($commentaires as $commentaire){?>
 			<div class="commentaire">
-				<div class='infos_commentaire'>Par <strong><?php echo $commentaire['auteur'];?></strong> le <?php echo $commentaire['date_fr']; ?></div>
-				<div class='contenu_commentaire'><p> <?php echo nl2br($commentaire['contenu']); ?> </p></div>
-				<hr/>
+				<div >
+					<img id='avatar' src="ressources/avatars/<?php echo $commentaire['auteur'];?>.jpeg" alt="<?php echo $commentaire['auteur']; ?>"/>
+				</div>
+
+				<div class='commentaire_infos'>
+					Par <strong><?php echo $commentaire['auteur'];?></strong>
+					<br /><?php $date=new DateTime($commentaire['date_fr']); echo $date->format('\l\e d-m-Y à H:i'); ?>
+				</div>
+
+				<hr />
+
+				<div class='commentaire_contenu'><?php echo nl2br($commentaire['contenu']); ?></div>
+
 			</div>
-			<?php
-		}?>
+
+			<?php	}?>
+			
 	</div>
 
 	<div id='commentaire_creer'>

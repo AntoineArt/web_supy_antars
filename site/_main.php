@@ -13,8 +13,8 @@
 
 session_start();
 $_SESSION['error'] = 0;
-include_once('controleur/identification/autoconnect.php');
 include_once('controleur/fonctions/secure.php');
+include_once('controleur/identification/autoconnect.php');
 
 // On regarde d'abord si l'utilisateur est nouveau
 if(!isset($_GET['section'])){
