@@ -11,33 +11,19 @@ function secure_bdd($data)
 	// Cas int    
 	if(ctype_digit($data))
     {
-        $string = intval($string);
+        $data = intval($data);
     }
     // Autres cas
     else
     {
-        $data = mysql_real_escape_string($data);
+        $data = string($data);
         $data = addcslashes($data, '%_');
     }
     
     return $data;
 }
 
-function secure_html($data)
-{
-    $data = htmlentities($data);
-
-    return $data;
-}
-
-function secure_get($data)
-{
-    $data = htmlentities($data);
-
-    return $data;
-}
-
-function secure_post($data)
+function secure_data($data)
 {
     $data = htmlentities($data);
 

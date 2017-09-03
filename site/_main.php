@@ -22,7 +22,7 @@ if(!isset($_GET['section'])){
 }
 else{
 	// On sécurise l'entrée
-	$data = secure_get($_GET['section']);
+	$data = secure_data($_GET['section']);
 	// On regarde ensuite si on est renvoyé sur une section dynamique
 	if($data == 'dynamic_section'){
 		$section = $_SESSION['dynamic_section'];
