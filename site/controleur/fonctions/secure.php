@@ -8,7 +8,7 @@
 
 function secure_bdd($data)
 {
-	// Cas int    
+	// Cas int
 	if(ctype_digit($data))
     {
         $data = intval($data);
@@ -19,7 +19,7 @@ function secure_bdd($data)
         $data = strval($data);
         $data = addcslashes($data, '%_');
     }
-    
+
     return $data;
 }
 

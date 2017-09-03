@@ -8,8 +8,8 @@
 
 try
 {
-	$bdd = new PDO('mysql:host=localhost;dbname=WebSA', 'root', 'root');
-	//$bdd = new PDO('mysql:host=localhost;dbname=WebSA', 'root', '');
+	//$bdd = new PDO('mysql:host=localhost;dbname=WebSA', 'root', 'root');
+	$bdd = new PDO('mysql:host=localhost;dbname=WebSA', 'root', '');
 
 }
 catch(Exception $e)

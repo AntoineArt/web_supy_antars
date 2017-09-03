@@ -12,17 +12,17 @@ include_once('modele/forums/commentaires.php');
 
 //Vérification des données IN PROGRESS
 if(isset($_GET['billet'])){
-	$id_billet = $_GET['billet'];
+	$id_billet = secure_data($_GET['billet']);
 	$_SESSION['id_billet'] = $id_billet;
-	$_SESSION['titre_billet'] = $_GET['titre'];
+	$_SESSION['titre_billet'] = secure_data($_GET['titre']);
 
 }
 else{
-	$id_billet = $_SESSION['id_billet'];
-	$titre = $_SESSION['titre_billet'];
+	$id_billet = secure_data($_SESSION['id_billet']);
+	$titre = secure_data($_SESSION['titre_billet']);
 }
 
-$commentaires = commentaires(0, 100, $id_billet, $bdd);
+$commentaires = commentaires(0, 100, secure_bdd($id_billet), secure_bdd($bdd));
 
 // On affiche la page (vue)
 $_SESSION['dynamic_section'] = 'commentaires';

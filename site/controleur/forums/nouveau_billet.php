@@ -18,9 +18,9 @@ elseif(isset($_POST['titre']) AND isset($_POST['contenu']) AND isset($_SESSION['
 	include_once('modele/forums/nouveau_commentaire.php');
 
 	// Vérification des informations IN PROGRESS
-	$titre = $_POST['titre'];
-	$contenu = $_POST['contenu'];
-	$pseudo = $_SESSION['pseudo'];
+	$titre = secure_bdd(secure_data($_POST['titre']));
+	$contenu = secure_bdd(secure_data($_POST['contenu']));
+	$pseudo = secure_bdd($_SESSION['pseudo']);
 
 	// Création du billet dans la bdd
 	$id = nouveau_billet($titre, $contenu, $pseudo, $bdd);
