@@ -7,7 +7,7 @@
 function is_email($mail)
 {
    $isemail = true;
-   if (!preg_match("#^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$#", $mail)){
+   if (!preg_match("#^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $mail)){
       $isemail = false;
    }
 

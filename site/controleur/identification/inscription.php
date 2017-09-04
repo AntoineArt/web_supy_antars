@@ -23,17 +23,27 @@ if(isset($_POST['pseudo']) AND isset($_POST['mdp']) AND isset($_POST['mdp2']) AN
 	$mail = is_email($email);
 	if ($liste){
 		// Le pseudo existe déjà
-		$_SESSION['error'] = 2;
+		$_SESSION['error'] = "Ce pseudo n'est pas disponible";
+		include_once('vue/identification/inscription.php'); 
+	}
+	elseif ($pseudo == ''){
+		//Le pseudo est vide
+		$_SESSION['error'] = "Il doit y avoir un pseudo";
 		include_once('vue/identification/inscription.php'); 
 	}
 	elseif($mdp != $mdp2){
 		// Les mots de passe ne sont pas identiques
-		$_SESSION['error'] = 3;
+		$_SESSION['error'] = 'Les mots de passe doivent êtres identiques';
+		include_once('vue/identification/inscription.php'); 
+	}
+	elseif ($mdp == ''){
+		//Le pseudo est vide
+		$_SESSION['error'] = "Il doit y avoir un mot de passe";
 		include_once('vue/identification/inscription.php'); 
 	}
 	elseif(!$mail){
 		// L'adresse mail est invalide
-		$_SESSION['error'] = 4;
+		$_SESSION['error'] = "L'adresse mail n'est pas valide";
 		include_once('vue/identification/inscription.php'); 
 	}
 	else{

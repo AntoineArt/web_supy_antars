@@ -8,7 +8,7 @@
 // Suppression de la session
 //$_SESSION = array(); // Par sécurité, supression des variables de session
 //session_destroy();
-$_SESSION['pseudo'] = NULL; //On préfèrera cette méthode pour préserver les sections dynamiques
+unset($_SESSION['pseudo']); //On préfèrera cette méthode pour préserver les sections dynamiques
 
 // Suppression des cookies
 setcookie('login', '', time() + 365*24*3600, null, null, false, true);

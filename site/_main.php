@@ -12,7 +12,7 @@
 */
 
 session_start();
-$_SESSION['error'] = 0;
+unset($_SESSION['error']);
 include_once('controleur/fonctions/secure.php');
 include_once('controleur/identification/autoconnect.php');
 
