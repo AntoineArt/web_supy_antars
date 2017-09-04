@@ -65,6 +65,10 @@ else{
 		break;
 
 		// Identification
+		case 'profil':
+		include_once('controleur/identification/profil.php');
+		break;
+
 		case 'connexion':
 		include_once('controleur/identification/connexion.php');
 		break;

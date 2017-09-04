@@ -9,7 +9,7 @@
 if(isset($_POST['pseudo']) AND isset($_POST['mdp']) AND isset($_POST['mdp2']) AND isset($_POST['email'])){
 	include_once('modele/connexion_bdd.php');
 	include_once('modele/identification/inscription.php');
-	include_once('modele/identification/get_pseudo.php');
+	include_once('modele/identification/get_info.php');
 	include_once('controleur/fonctions/is_email.php');
 
 	// Sécurisation des informations
@@ -19,7 +19,7 @@ if(isset($_POST['pseudo']) AND isset($_POST['mdp']) AND isset($_POST['mdp2']) AN
 	$email = secure_bdd(secure_data($_POST['email']));
 
 	// Vérification des conditions
-	$liste = get_pseudo($pseudo, $bdd);
+	$liste = get_info($pseudo, $bdd);
 	$mail = is_email($email);
 	if ($liste){
 		// Le pseudo existe déjà
