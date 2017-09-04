@@ -11,12 +11,12 @@ include_once('modele/forums/billets.php');
 $billets = billets(0, 20, $bdd);
 
 // On traite les données récupérées
-foreach($billets as $cle => $billet){
+foreach($billets as $billet){
 	// L'affichage est sécurisé avec le htmlspecialchars
-	$billets[$cle]['titre'] = secure_data($billet['titre']);
+	$billet['titre'] = secure_data($billet['titre']);
 	// La fonction nl2br permet d'afficher les sauts de ligne du texte
 	// Les mots trop longs seront cassés par le css de toute façon
-	$billets[$cle]['contenu'] = nl2br(secure_data($billet['contenu']));
+	$billet['contenu'] = secure_data($billet['contenu']);
 }
 
 // On affiche la page (vue)

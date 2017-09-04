@@ -22,7 +22,10 @@ else{
 	$titre = secure_data($_SESSION['titre_billet']);
 }
 
-$commentaires = commentaires(0, 100, secure_bdd($id_billet), $bdd);
+$commentaires = commentaires(0, 100, $id_billet, $bdd);
+foreach ($commentaires as $com) {
+	$com['contenu']=secure_data($com['contenu']);
+}
 
 // On affiche la page (vue)
 $_SESSION['dynamic_section'] = 'commentaires';
