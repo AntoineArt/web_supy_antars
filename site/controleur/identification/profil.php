@@ -8,10 +8,10 @@
 */
 
 // Si le formulaire html a été rempli
-if(isset($_SESSION['pseudo']) AND (isset($_POST['pseudo']) OR (isset($_POST['mdp']) AND isset($_POST['mdp2'])) OR isset($_POST['email']) OR isset($_POST['avatar']))){
+if(isset($_SESSION['pseudo']) AND (isset($_POST['pseudo']) OR (isset($_POST['mdp']) AND isset($_POST['mdp2'])) OR isset($_POST['email']) OR isset($_FILES['avatar']))){
 	include_once('modele/connexion_bdd.php');
-	include_once('modele/identification/update.php');
 	include_once('modele/identification/get_info.php');
+	include_once('modele/identification/update.php');
 	$id = get_id($_SESSION['pseudo'], $bdd)['id'];
 
 	// Modification du pseudo
@@ -35,6 +35,7 @@ if(isset($_SESSION['pseudo']) AND (isset($_POST['pseudo']) OR (isset($_POST['mdp
 
 	// Modification du mot de passe
 	elseif(isset($_POST['mdp']) AND isset($_POST['mdp2'])){
+		include_once('controleur/fonctions/is_valid_password.php');
 		// Sécurisation des informations
 		$mdp = secure_bdd(secure_data($_POST['mdp']));
 		$mdp2 = secure_bdd(secure_data($_POST['mdp2']));
@@ -43,6 +44,10 @@ if(isset($_SESSION['pseudo']) AND (isset($_POST['pseudo']) OR (isset($_POST['mdp
 		if($mdp != $mdp2){
 			// Les mots de passe ne sont pas identiques
 			$_SESSION['error'] = 'Les mots de passe doivent êtres identiques';
+		}
+		elseif(!is_valid_password($mdp)){
+			// Le mot de passe n'est pas valide
+			$_SESSION['error'] = 'Le mot de passe doit avoir au moins 6 caractères, dont majuscules, minuscules et chiffres';
 		}
 		else{
 			// MAJ du mdp
@@ -54,12 +59,12 @@ if(isset($_SESSION['pseudo']) AND (isset($_POST['pseudo']) OR (isset($_POST['mdp
 
 	// Modification de l'adresse mail
 	elseif(isset($_POST['email'])){
+		include_once('controleur/fonctions/is_valid_email.php');
 		// Sécurisation des informations
 		$email = secure_bdd(secure_data($_POST['pseudo']));
-		$mail = is_email($email);
 
 		// Vérification des conditions
-		if(!$mail){
+		if(!$is_valid_email($email)){
 			// L'adresse mail est invalide
 			$_SESSION['error'] = "l'adresse mail est invalide";
 		}
@@ -69,30 +74,27 @@ if(isset($_SESSION['pseudo']) AND (isset($_POST['pseudo']) OR (isset($_POST['mdp
 		}
 	}
 
-	elseif(isset($_POST['avatar'])){
-		echo 'rentré';
-		//On vérifie que le fichier est bien un .jpeg
-		$extensions_autorises = array('.jpeg');
-		$extension = strrchr($_FILES['avatar']['name'], '.'); //on récupère la fin de la chaîne
-		if(!in_array($extension, $extensions_autorises)) //Si l'extension n'est pas dans le tableau
+	elseif(isset($_FILES['avatar'])){
+		// On vérifie que le fichier est bien un .jpeg
+		$extensions_autorises = array('.jpeg'); // A compléter
+		$extension = strrchr($_FILES['avatar']['name'], '.'); // On récupère la fin de la chaîne
+		if(!in_array($extension, $extensions_autorises)) // Si l'extension n'est pas dans le tableau
 		{
 			$_SESSION['error'] = 'Il faut fournir une image en au format JPEG';
-			echo 'wesh';
 		}
 		else{
 			$name = $_SESSION['pseudo'];
+			$name .= $extension;
 			// On tente d'uploader
-			if(!move_uploaded_file($_POST['avatar'], 'ressources/avatars' . $name)){
+			if(!move_uploaded_file($_FILES['avatar']['tmp_name'], 'ressources/avatars/' . $name)){
         		$_SESSION['error'] = "Echec de l'upload de l'image";
-        		echo 'superwesh';
      		}
-     		echo 'rewesh';
 		}
 	}
 
 	// Neverused
 	else{
-		$_SESSION['error'] = '';
+		$_SESSION['error'] = 'Erreur dans le traitement, réessayez s.v.p';
 	}
 }
 // On affiche toujours la page

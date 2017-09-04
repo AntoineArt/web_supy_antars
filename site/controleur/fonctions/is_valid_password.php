@@ -4,12 +4,12 @@
    Cette fonction détermine si une chaîne de caractère est une adresse mail valide
 */
 
-function is_email($mail)
+function is_valid_password($mdp)
 {
-   $isemail = true;
-   if (!preg_match("#^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $mail)){
-      $isemail = false;
+   $isvalid = true;
+   if (ctype_lower($mdp) OR ctype_upper($mdp) OR (strlen($mdp)<6)){
+      $isvalid = false;
    }
 
-   return $isemail;
+   return $isvalid;
 }

@@ -10,7 +10,8 @@ if(isset($_POST['pseudo']) AND isset($_POST['mdp']) AND isset($_POST['mdp2']) AN
 	include_once('modele/connexion_bdd.php');
 	include_once('modele/identification/inscription.php');
 	include_once('modele/identification/get_info.php');
-	include_once('controleur/fonctions/is_email.php');
+	include_once('controleur/fonctions/is_valid_email.php');
+	include_once('controleur/fonctions/is_valid_password.php');
 
 	// Sécurisation des informations
 	$pseudo = secure_bdd(secure_data($_POST['pseudo']));
@@ -20,8 +21,8 @@ if(isset($_POST['pseudo']) AND isset($_POST['mdp']) AND isset($_POST['mdp2']) AN
 
 	// Vérification des conditions
 	$liste = get_info($pseudo, $bdd);
-	$mail = is_email($email);
-	if ($liste){
+	$mail = is_valid_email($email);
+	if ($liste){ // On réserve le nom default
 		// Le pseudo existe déjà
 		$_SESSION['error'] = "Ce pseudo n'est pas disponible";
 		include_once('vue/identification/inscription.php'); 
@@ -36,9 +37,9 @@ if(isset($_POST['pseudo']) AND isset($_POST['mdp']) AND isset($_POST['mdp2']) AN
 		$_SESSION['error'] = 'Les mots de passe doivent êtres identiques';
 		include_once('vue/identification/inscription.php'); 
 	}
-	elseif ($mdp == ''){
-		//Le pseudo est vide
-		$_SESSION['error'] = "Il doit y avoir un mot de passe";
+	elseif(!is_valid_password($mdp)){
+		// Le mot de passe n'est pas valide
+		$_SESSION['error'] = 'Le mot de passe doit avoir au moins 6 caractères (maj et min)';
 		include_once('vue/identification/inscription.php'); 
 	}
 	elseif(!$mail){
@@ -52,6 +53,9 @@ if(isset($_POST['pseudo']) AND isset($_POST['mdp']) AND isset($_POST['mdp2']) AN
 		$mdpS = hash('sha512',$mdp);
 		// Inscription effective
 		inscription($pseudo, $mdpS, $email, $bdd);
+		$name = $pseudo;
+		$name .= '.jpeg';
+		copy('ressources/images/default.jpeg', 'ressources/avatars/' . $name);
 
 		header('location: _main.php?section=dynamic_section');
 		exit();
