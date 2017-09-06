@@ -44,7 +44,7 @@ else{
 
 		// Wiki
 		case 'mainwiki':
-		include_once('vue/wiki/mainwiki.html');
+		include_once('controleur/wiki/mainwiki.php');
 		break;
 
 		// Forums

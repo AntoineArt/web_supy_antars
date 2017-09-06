@@ -172,6 +172,27 @@ form{
 
 /* =====WIKI===== */
 
+#choix_section{
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-content:center;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: left;
+
+}
+
+#choix_section h2{
+	margin: 10px 5px;
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 6px black;
+	width: 300px;
+	background-color: rgb(140, 140, 140);
+	text-align: center;
+}
+
 /* =====FORUM===== */
 #forum, #commentaires{
     margin: auto;
