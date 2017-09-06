@@ -50,7 +50,7 @@ if(isset($_POST['pseudo']) AND isset($_POST['mdp']) AND isset($_POST['mdp2']) AN
 	else{
 		// Les informations respectent les conditions
 		// Hachage du mot de passe
-		$mdpS = hash('sha512',$mdp);
+		$mdpS = encode_password($mdp, $pseudo);
 		// Inscription effective
 		inscription($pseudo, $mdpS, $email, $bdd);
 		$name = $pseudo;

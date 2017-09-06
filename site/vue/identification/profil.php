@@ -48,7 +48,8 @@
 				</form>
 				<form action='_main.php?section=profil' method='post' enctype="multipart/form-data">	
 					<h2>Changer d'avatar:</h2>
-     				<input type="hidden" name="MAX_FILE_SIZE" value="100000">
+					<p>(Le changement peut prendre quelques minutes à être effectif)</p>
+     				<input type="hidden" name="MAX_FILE_SIZE" value="200000">
     				Fichier : <input type="file" name="avatar">
     				<input type="submit" value="Valider">
 				</form>
