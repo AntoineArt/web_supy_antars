@@ -10,7 +10,8 @@ if(isset($_POST['pseudo']) AND isset($_POST['mdp']) AND isset($_POST['mdp2']) AN
 	include_once('modele/connexion_bdd.php');
 	include_once('modele/identification/inscription.php');
 	include_once('modele/identification/get_info.php');
-	include_once('controleur/fonctions/is_email.php');
+	include_once('controleur/fonctions/is_valid_email.php');
+	include_once('controleur/fonctions/is_valid_password.php');
 
 	// Sécurisation des informations
 	$pseudo = secure_bdd(secure_data($_POST['pseudo']));
@@ -20,20 +21,30 @@ if(isset($_POST['pseudo']) AND isset($_POST['mdp']) AND isset($_POST['mdp2']) AN
 
 	// Vérification des conditions
 	$liste = get_info($pseudo, $bdd);
-	$mail = is_email($email);
-	if ($liste){
+	$mail = is_valid_email($email);
+	if ($liste){ // On réserve le nom default
 		// Le pseudo existe déjà
-		$_SESSION['error'] = 2;
+		$_SESSION['error'] = "Ce pseudo n'est pas disponible";
+		include_once('vue/identification/inscription.php'); 
+	}
+	elseif ($pseudo == ''){
+		//Le pseudo est vide
+		$_SESSION['error'] = "Il doit y avoir un pseudo";
 		include_once('vue/identification/inscription.php'); 
 	}
 	elseif($mdp != $mdp2){
 		// Les mots de passe ne sont pas identiques
-		$_SESSION['error'] = 3;
+		$_SESSION['error'] = 'Les mots de passe doivent êtres identiques';
+		include_once('vue/identification/inscription.php'); 
+	}
+	elseif(!is_valid_password($mdp)){
+		// Le mot de passe n'est pas valide
+		$_SESSION['error'] = 'Le mot de passe doit avoir au moins 6 caractères (maj et min)';
 		include_once('vue/identification/inscription.php'); 
 	}
 	elseif(!$mail){
 		// L'adresse mail est invalide
-		$_SESSION['error'] = 4;
+		$_SESSION['error'] = "L'adresse mail n'est pas valide";
 		include_once('vue/identification/inscription.php'); 
 	}
 	else{
@@ -42,6 +53,9 @@ if(isset($_POST['pseudo']) AND isset($_POST['mdp']) AND isset($_POST['mdp2']) AN
 		$mdpS = hash('sha512',$mdp);
 		// Inscription effective
 		inscription($pseudo, $mdpS, $email, $bdd);
+		$name = $pseudo;
+		$name .= '.jpeg';
+		copy('ressources/images/default.jpeg', 'ressources/avatars/' . $name);
 
 		header('location: _main.php?section=dynamic_section');
 		exit();

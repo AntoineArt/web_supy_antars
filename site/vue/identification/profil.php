@@ -26,33 +26,31 @@
 		<?php /*=====MAIN=====*/ ?>
 		<section>
 			<div id='profil'>
-				<h1>Profil :</h1>
-				<div class='error'>
-					<?php
-						switch($_SESSION['error']){
-						case 1:
-						?> <div class='error'><p>Erreur dans le traitement des informations !</p></div> <?php
-						break;
-						case 2:
-						?> <div class='error'><p>Ce pseudo est déjà utilisé !</p></div> <?php
-						break;
-						case 3:
-						?> <div class='error'><p>Les mots de passe doivent être identiques !</p></div> <?php
-						break;
-						case 4:
-						?> <div class='error'><p>L'adresse mail doit être valide !</p></div> <?php
-						break;
-						}
-					?>
+				<h1>Profil : <?php echo($_SESSION['pseudo']); ?></h1>
+				<div >
+					<img id='avatar' src="ressources/avatars/<?php echo $_SESSION['pseudo'];?>.jpeg" alt="<?php echo $_SESSION['pseudo']; ?>"/>
 				</div>
+
+				<div class='error'> <?php if (isset($_SESSION['error'])){echo $_SESSION['error'];} ?></p> </div>
+
 				<form action='_main.php?section=profil' method='post'>
-					<p> Pseudo <input type='text' name='pseudo' /> <input type='submit' value='Valider' /> </p>
+					<h2>Changer de pseudo:</h2>
+					<p>Nouveau pseudo <input type='text' name='pseudo' /> <input type='submit' value='Valider' /> </p>
 				</form>
 				<form action='_main.php?section=profil' method='post'>
-					<p> Mot de passe <input type='password' name='mdp' /> </p>
-					<p> Répéter mot de passe <input type='password' name='mdp2' /> <input type='submit' value='Valider' /> </p>
+					<h2>Changer de mot de passe:</h2>
+					<p>Nouveau mdp <input type='password' name='mdp' /> </p>
+					<p>Répéter mdp <input type='password' name='mdp2' /> <input type='submit' value='Valider' /> </p>
 				</form>
-					<p> Adresse mail <input type='text' name='email' /> <input type='submit' value='Valider' /> </p>
+				<form action='_main.php?section=profil' method='post'>
+					<h2>Changer d'adresse mail:</h2>
+					<p> Nouvelle adresse <input type='text' name='email' /> <input type='submit' value='Valider' /> </p>
+				</form>
+				<form action='_main.php?section=profil' method='post' enctype="multipart/form-data">	
+					<h2>Changer d'avatar:</h2>
+     				<input type="hidden" name="MAX_FILE_SIZE" value="100000">
+    				Fichier : <input type="file" name="avatar">
+    				<input type="submit" value="Valider">
 				</form>
 			</div>
 		</section>

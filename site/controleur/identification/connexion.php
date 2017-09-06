@@ -25,7 +25,7 @@ if(isset($_POST['pseudo']) AND isset($_POST['mdp'])){
 
 	if (!$liste){
 		// On renvoie une erreur à la page html
-		$_SESSION['error'] = 1;
+		$_SESSION['error'] = "Mauvais couple identifiant/mdp";
 		include_once('vue/identification/connexion.php'); 
 	}
 	else{

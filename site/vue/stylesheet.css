@@ -9,9 +9,9 @@
 - main
 - footer
 - formulaires
+- news
 - wiki
 - forum
-- communauté
 */
 
 /* =====GENERAL===== */
@@ -161,6 +161,7 @@ footer h2{
 	text-align: center;
 }
 
+/* =====NEWS===== */
 
 /* =====FORMULAIRES===== */
 form{
@@ -228,46 +229,46 @@ form{
 #forum_creer{
     border-radius: 10px;
     padding: 10px;
+    align-self: center;
     margin: 15px 5px;
     background-color: rgb(140, 140, 140);
     box-shadow: 0px 4px 6px black;
 }
 
 .commentaire{
-		display: flex;
-		flex-flow:row;
-	  width: 1000px;
-		padding: 10px;
+	display: flex;
+	flex-flow:row;
+	width: 1000px;
+	padding: 10px;
     margin: 5px 5px;
-		background-color: rgb(140, 140, 140);
-		box-shadow: 0px 4px 6px black;
+	background-color: rgb(140, 140, 140);
+	box-shadow: 0px 4px 6px black;
     word-wrap: break-word;
 }
 
 .commentaire_contenu{
-		width: inherit;
-		word-wrap: break-word;
-		text-align: justify;
-		overflow: hidden;
-		margin-left: 10px;
+	width: inherit;
+	word-wrap: break-word;
+	text-align: justify;
+	overflow: hidden;
+	margin-left: 10px;
 }
 
 .commentaire_infos{
-		text-align:left;
-		margin-left: 10px;
+	text-align:left;
+	margin-left: 10px;
 }
 
 #avatar{
-		width:50px;
+	width:50px;
 }
 
 #commentaire_creer{
     border-radius: 10px;
     padding: 10px;
-		align-self: center;
+	align-self: center;
     margin: 15px 5px;
     background-color: rgb(140, 140, 140);
     box-shadow: 0px 4px 6px black;
 }
 
-/* =====COMMUNAUTE===== */
