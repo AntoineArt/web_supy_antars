@@ -18,7 +18,7 @@ if(isset($_POST['pseudo']) AND isset($_POST['mdp'])){
 	$mdp = secure_bdd(secure_data($_POST['mdp']));
 
 	//On crypte le mot de passe pour effectuer la vérification
-	$mdpS = hash('sha512', $mdp);
+	$mdpS = encode_password($mdp, $pseudo);
 
 	//On vérifie si le couple id/mdpS est dans la base de données
 	$liste = liste_comptes($pseudo, $mdpS, $bdd);

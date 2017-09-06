@@ -15,7 +15,7 @@ if(!isset($_SESSION['pseudo'])){
 // Si le formulaire html a été rempli
 elseif(isset($_POST['contenu']) AND isset($_SESSION['pseudo'])){
 	include_once('modele/connexion_bdd.php');
-	include_once('modele/forums/nouveau_commentaire.php');
+	include_once('modele/forums/commentaire.php');
 
 	// Vérification des informations IN PROGRESS
 	$id_billet = secure_bdd($_SESSION['id_billet']);
