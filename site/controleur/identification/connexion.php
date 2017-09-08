@@ -30,12 +30,15 @@ if(isset($_POST['pseudo']) AND isset($_POST['mdp'])){
 	}
 	else{
 		// On connecte l'utilisateur
+		include_once("modele/identification/get_info");
+
 		if(isset($_POST['autoconnect'])){
 			setcookie('pseudo', $pseudo, time() + 365*24*3600, null, null, false, true);
 			setcookie('mdpS', $mdpS, time() + 365*24*3600, null, null, false, true);
 			setcookie('autoconnect', '1', time() + 365*24*3600, null, null, false, true);
 		}
 		$_SESSION['pseudo'] = $pseudo;
+		$_SESSION['droit'] = get_droit($_SESSION['pseudo'], $bdd);
 		header('location: _main.php?section=dynamic_section');
 		exit();
 	}

@@ -37,6 +37,6 @@ function encode_password($mdp, $salt) // Il parait que c'est overkill
    $mdpS .= hash('sha512', $mdp);
    $mdpS .= hash('sha512', $salt);
    $mdpS .= hash('sha512', 'Xuor_adnaP');
-   $mdpS .= hash('sha512', $mdpS);
+   $mdpS = hash('sha512', $mdpS);
    return $mdpS;
 }

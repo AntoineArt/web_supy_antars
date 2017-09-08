@@ -26,3 +26,14 @@ function get_id($pseudo, $bdd)
     return $result;
 }
 
+function get_droit($pseudo, $bdd)
+{
+    $req = $bdd->prepare('SELECT droit FROM membres WHERE pseudo = :pseudo');
+    $req->execute(array(
+        'pseudo' => $pseudo
+        ));
+
+    $result = $req->fetch();
+    return $result;
+
+}

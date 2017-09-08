@@ -26,7 +26,7 @@
 
 		<?php /*=====MAIN=====*/ ?>
 
-		<h2><?php echo $_SESSION['titre_billet']; ?></h2>
+		<h2 class=nom_billet><?php echo $_SESSION['titre_billet']; ?></h2>
 
 		<div id='commentaires'>
 			<?php
@@ -38,7 +38,7 @@
 
 				<div class='commentaire_infos'>
 					Par <strong><?php echo $commentaire['auteur'];?></strong>
-					<br /><?php $date=new DateTime($commentaire['date_fr']); echo $date->format('\l\e d-m-Y à H:i'); ?>
+					<br /><?php $date=new DateTime($commentaire['date_fr']); echo $date->format('\l\e d-m-Y'); echo ('<br />'); echo $date->format('à H:i'); ?>
 				</div>
 
 				<hr />

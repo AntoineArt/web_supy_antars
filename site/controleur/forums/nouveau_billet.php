@@ -14,8 +14,8 @@ if(!isset($_SESSION['pseudo'])){
 elseif(isset($_POST['titre']) AND isset($_POST['contenu']) AND isset($_SESSION['pseudo'])){
 
 	include_once('modele/connexion_bdd.php');
-	include_once('modele/forums/billet.php');
-	include_once('modele/forums/commentaire.php');
+	include_once('modele/forums/billets.php');
+	include_once('modele/forums/commentaires.php');
 
 	// Vérification des informations IN PROGRESS
 	$titre = secure_bdd(secure_data($_POST['titre']));
