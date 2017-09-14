@@ -8,7 +8,7 @@
 
 if(isset($_SESSION['pseudo'])){
 	include_once("modele/connexion_bdd.php");
-	include_once("modele/identification/get_info");
+	include_once("modele/identification/get_info.php");
 
 	$_SESSION['droit'] = get_droit($_SESSION['pseudo'], $bdd);
 }

@@ -78,13 +78,13 @@ if(isset($_SESSION['pseudo']) AND (isset($_POST['pseudo']) OR (isset($_POST['mdp
 		// On vérifie que le fichier est bien un .jpeg
 		$extensions_autorises = array('.jpeg'); // A compléter
 		$extension = strrchr($_FILES['avatar']['name'], '.'); // On récupère la fin de la chaîne
-		$image = @imagecreatefromjpeg($_FILES['avatar']); // On supprime le retour d'erreurs
+		//$image = @imagecreatefromjpeg($_FILES['avatar']); // On supprime le retour d'erreurs
 		if(!in_array($extension, $extensions_autorises)){ // Si l'extension n'est pas dans le tableau
 			$_SESSION['error'] = 'Il faut fournir une image en au format JPEG';
 		}
-		elseif(!$image){
+		/*elseif(!$image){
 			$_SESSION['error'] = "Erreur de chargement de l'image"; // Sécurité basique, à améliorer
-		}
+		}*/
 		else{
 			$name = $_SESSION['pseudo'];
 			$name .= $extension;

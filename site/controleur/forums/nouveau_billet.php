@@ -22,10 +22,12 @@ elseif(isset($_POST['titre']) AND isset($_POST['contenu']) AND isset($_SESSION['
 	$contenu = secure_bdd(secure_data($_POST['contenu']));
 	$pseudo = secure_bdd($_SESSION['pseudo']);
 
+	$titre_billet = secure_bdd($_SESSION['titre_billet']);
+
 	// Création du billet dans la bdd
 	$id = nouveau_billet($titre, $contenu, $pseudo, $bdd);
 	// Ajout du contenu du billet comme premier commentaire du billet
-	nouveau_commentaire($id, $pseudo, $contenu, $bdd);
+	nouveau_commentaire($id, $titre_billet, $pseudo, $contenu, $bdd);
 
 	header('location: _main.php?section=mainforums');
 	exit();

@@ -7,7 +7,7 @@
 function is_valid_password($mdp)
 {
    $isvalid = true;
-   if (ctype_lower($mdp) OR ctype_upper($mdp) OR (strlen($mdp)<6)){
+   if (ctype_lower($mdp) OR ctype_upper($mdp) OR (strlen($mdp)<5)){
       $isvalid = false;
    }
 

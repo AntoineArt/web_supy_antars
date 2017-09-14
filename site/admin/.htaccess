@@ -1,4 +1,4 @@
 AuthName "Administration du site (protected)"
 AuthType Basic
-AuthUserFile "/opt/lampp/htdocs/projets/site_jdr/admin/.htpasswd"
+AuthUserFile "/opt/lampp/htdocs/projets/site/admin/.htpasswd"
 Require valid-user
