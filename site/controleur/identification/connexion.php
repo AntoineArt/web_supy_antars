@@ -30,7 +30,7 @@ if(isset($_POST['pseudo']) AND isset($_POST['mdp'])){
 	}
 	else{
 		// On connecte l'utilisateur
-		include_once("modele/identification/get_info");
+		include_once("modele/identification/get_info.php");
 
 		if(isset($_POST['autoconnect'])){
 			setcookie('pseudo', $pseudo, time() + 365*24*3600, null, null, false, true);

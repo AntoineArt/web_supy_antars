@@ -37,7 +37,7 @@ Ce code correspond à l'index du forum.
 			foreach($billets as $billet){?>
 				<div class='billet'>
 					<div class='nom_billet'><?php echo $billet['titre'];?></div>
-					<div class='infos_billet'>Par <strong><?php echo $billet['auteur'];?></strong> le <?php echo $billet['date_fr']; ?></div>
+					<div class='infos_billet'>Par <a href="_main.php?section=commentaires_utilisateur&amp;pseudo=<?php echo $billet['auteur'];?>"><strong><?php echo $billet['auteur'];?></strong></a> le <?php echo $billet['date_fr']; ?></div>
 					<br/>
 					<a href="_main.php?section=commentaires&amp;billet=<?php echo $billet['id'];?>&amp;titre=<?php echo $billet['titre'];?>">Voir la discussion</a>
 					<hr/>

@@ -19,11 +19,12 @@ elseif(isset($_POST['contenu']) AND isset($_SESSION['pseudo'])){
 
 	// Vérification des informations IN PROGRESS
 	$id_billet = secure_bdd($_SESSION['id_billet']);
+	$titre_billet = secure_bdd($_SESSION['titre_billet']);
 	$pseudo = secure_bdd($_SESSION['pseudo']);
 	$contenu = secure_bdd(secure_data($_POST['contenu']));
 
 	// Création du billet dans la bdd
-	nouveau_commentaire($id_billet, $pseudo, $contenu, $bdd);
+	nouveau_commentaire($id_billet, $titre_billet, $pseudo, $contenu, $bdd);
 
 	//Passage des informations dans la session (le header ne peut en renvoyer qu'une dans l'URL)
 	if(isset($_GET['titre'])){ //Au cas ou on créé plusieurs commentaires d'affilée

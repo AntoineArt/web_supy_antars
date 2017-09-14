@@ -31,20 +31,21 @@
 		<div id='commentaires'>
 			<?php
 			foreach($commentaires as $commentaire){?>
-			<div class="commentaire">
-				<div >
-					<img id='avatar' src="ressources/avatars/<?php echo $commentaire['auteur'];?>.jpeg" alt="<?php echo $commentaire['auteur']; ?>"/>
+			<div id=<?php echo $commentaire['id'];?>>
+				<div class="commentaire">
+					<div >
+						<img id='avatar' src="ressources/avatars/<?php echo $commentaire['auteur'];?>.jpeg" alt="<?php echo $commentaire['auteur']; ?>"/>
+					</div>
+
+					<div class='commentaire_infos'>
+						Par <a href="_main.php?section=commentaires_utilisateur&amp;pseudo=<?php echo $commentaire['auteur'];?>"><strong><?php echo $commentaire['auteur'];?></strong></a>
+						<br /><?php $date=new DateTime($commentaire['date_fr']); echo $date->format('\l\e d-m-Y'); echo ('<br />'); echo $date->format('à H:i'); ?>
+					</div>
+
+					<hr />
+
+					<div class='commentaire_contenu'><?php echo nl2br($commentaire['contenu']); ?></div>
 				</div>
-
-				<div class='commentaire_infos'>
-					Par <strong><?php echo $commentaire['auteur'];?></strong>
-					<br /><?php $date=new DateTime($commentaire['date_fr']); echo $date->format('\l\e d-m-Y'); echo ('<br />'); echo $date->format('à H:i'); ?>
-				</div>
-
-				<hr />
-
-				<div class='commentaire_contenu'><?php echo nl2br($commentaire['contenu']); ?></div>
-
 			</div>
 
 			<?php	}?>

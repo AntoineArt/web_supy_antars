@@ -65,6 +65,10 @@ else{
 		include_once('controleur/forums/nouveau_commentaire.php');
 		break;
 
+		case 'commentaires_utilisateur':
+		include_once('controleur/forums/commentaires_utilisateur.php');
+		break;
+
 		// Identification
 		case 'profil':
 		include_once('controleur/identification/profil.php');

@@ -24,6 +24,23 @@ function billets($min, $max, $bdd)
 
 /*
     Auteur: Frapiccini Benoît
+    Cette fonction renvoie les informations liées au billet dont l'id est passé en argument
+*/
+
+function billet($id, $bdd)
+{
+    // Au cas ou php aurait un doute (oui ça arrive)
+    
+    $req = $bdd->prepare('SELECT id, titre, contenu, auteur, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_fr
+       FROM billets WHERE id=:id');
+    $req->execute(array('id' => $id));
+
+    $result = $req->fetchAll();
+    return $result;
+}
+
+/*
+    Auteur: Frapiccini Benoît
     Cette fonction créée un nouveau billet dans la base de donnée à l'aide des données passées en argument.
     La date et l'heure sont récupérées par la fonction "NOW"
     
