@@ -1,7 +1,7 @@
 <?php
 /*
 	Auteur : Artillan Antoine
-	Cette page regroupe
+	Cette page regroupe les différents articles de la section sélectionnée
 */
 ?>
 
@@ -27,8 +27,10 @@
 
 			<?php if($_SESSION['article_wiki']=="mainwiki"){ ?>
 			<h1 class="titre">WikiHub</h1>
-			<div id="choix_section">
-				
+			<div id="choix_article">
+				<?php foreach ($articles as $article): ?>
+					<h2><a href="controleur/wiki/page_articles"></a></h2>
+				<?php endforeach; ?>
 			</div>
 			<?php } ?>
 
