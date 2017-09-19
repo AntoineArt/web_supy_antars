@@ -25,12 +25,11 @@
 
 			<?php /*=====MAIN=====*/ ?>
 
-			<?php if($_SESSION['article_wiki']=="mainwiki"){ ?>
 			<h1 class="titre">WikiHub</h1>
 			<div id="choix_article">
 				<?php foreach ($articles as $article): ?>
-					<h2><a href="controleur/wiki/page_articles"></a></h2>
-				<?php endforeach; ?>
+					<h2><a href="controleur/wiki/article.php?id_article=<?php echo $article['id']; ?>"></a></h2>
+				<?php endforeach;? ?>
 			</div>
 			<?php } ?>
 
