@@ -10,7 +10,7 @@ function billets($min, $max, $bdd)
     // Au cas ou php aurait un doute (oui ça arrive)
     $min = (int) $min;
     $max = (int) $max;
-    
+
     $req = $bdd->prepare('SELECT id, titre, contenu, auteur, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_fr
        FROM billets ORDER BY date_creation DESC LIMIT :min, :max');
     // On force le type
@@ -43,7 +43,7 @@ function billet($id, $bdd)
     Auteur: Frapiccini Benoît
     Cette fonction créée un nouveau billet dans la base de donnée à l'aide des données passées en argument.
     La date et l'heure sont récupérées par la fonction "NOW"
-    
+
     /!\ La requête est préparée avant d'être éxécutée afin de protéger la base de donnée !
     /!\ La fonction renvoie l'id du dernier élément inséré !
 */

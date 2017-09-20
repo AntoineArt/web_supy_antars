@@ -4,7 +4,7 @@
 	Renvoie la liste des sections dans l'ordre de leur id croissant
 */
 
-function sections($bdd)
+function get_sections($bdd)
 {
 	// préparation de la requête
 	$req = $bdd->prepare('SELECT nom, description FROM sections_wiki ORDER BY id ASC');
