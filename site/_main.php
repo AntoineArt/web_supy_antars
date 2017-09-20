@@ -39,8 +39,8 @@ else{
 		include_once('vue/mainpage/mainpage.php');
 		break;
 
-		// News
-		case 'mainnews':
+		// Articles
+		case 'mainarticles':
 		break;
 
 		// Wiki
