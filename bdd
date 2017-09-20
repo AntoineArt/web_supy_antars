@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  Dim 03 sep. 2017 à 11:34
+-- Généré le :  mer. 20 sep. 2017 à 08:31
 -- Version du serveur :  5.6.35
 -- Version de PHP :  7.1.6
 
@@ -17,117 +17,43 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `accreditation`
+-- Structure de la table `sections_wiki`
 --
 
-CREATE TABLE `accreditation` (
+CREATE TABLE `sections_wiki` (
+  `nom` varchar(40) NOT NULL,
   `id` int(11) NOT NULL,
-  `admin` tinyint(1) NOT NULL DEFAULT '0',
-  `membre` tinyint(1) NOT NULL DEFAULT '0',
-  `bannis` tinyint(1) NOT NULL DEFAULT '0',
-  `moderateur` tinyint(1) NOT NULL DEFAULT '0',
-  `redacteur` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
+  `description` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Structure de la table `billets`
+-- Déchargement des données de la table `sections_wiki`
 --
 
-CREATE TABLE `billets` (
-  `id` int(11) NOT NULL,
-  `titre` varchar(255) NOT NULL,
-  `contenu` text NOT NULL,
-  `auteur` varchar(255) NOT NULL,
-  `date_creation` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `commentaires`
---
-
-CREATE TABLE `commentaires` (
-  `id` int(11) NOT NULL,
-  `id_billet` int(11) NOT NULL,
-  `auteur` varchar(255) NOT NULL,
-  `contenu` text NOT NULL,
-  `date_commentaire` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `membres`
---
-
-CREATE TABLE `membres` (
-  `id` int(11) NOT NULL,
-  `pseudo` varchar(255) NOT NULL,
-  `mdp` text NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `date_inscription` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `membres`
---
-
-INSERT INTO `membres` (`id`, `pseudo`, `mdp`, `email`, `date_inscription`) VALUES
-(1, 'Supytalp', '041cfc785dbfc45ae429377376519ca9be80433589341825b8b1f4999f856905b728b7075c653fb0adfd82f0803ea3d140d4e282a32dcac6207f9daf3dc92341', 'benoit.frapiccini@telecomnancy.com', '2017-09-01');
+INSERT INTO `sections_wiki` (`nom`, `id`, `description`) VALUES
+('lore', 1, 'Le lore'),
+('monde', 2, 'Le monde'),
+('societe', 3, 'La soci&eacute;t&eacute;'),
+('faune', 4, 'La faune'),
+('science', 5, 'La science'),
+('mechas', 6, 'Les m&eacute;chas');
 
 --
 -- Index pour les tables déchargées
 --
 
 --
--- Index pour la table `accreditation`
+-- Index pour la table `sections_wiki`
 --
-ALTER TABLE `accreditation`
+ALTER TABLE `sections_wiki`
   ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `billets`
---
-ALTER TABLE `billets`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `commentaires`
---
-ALTER TABLE `commentaires`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `membres`
---
-ALTER TABLE `membres`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `pseudo` (`pseudo`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT pour la table `accreditation`
+-- AUTO_INCREMENT pour la table `sections_wiki`
 --
-ALTER TABLE `accreditation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `billets`
---
-ALTER TABLE `billets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `commentaires`
---
-ALTER TABLE `commentaires`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `membres`
---
-ALTER TABLE `membres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `sections_wiki`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;

@@ -7,7 +7,7 @@
 function get_sections($bdd)
 {
 	// préparation de la requête
-	$req = $bdd->prepare('SELECT nom, description FROM sections_wiki ORDER BY id ASC');
+	$req = $bdd->prepare('SELECT nom, id, description FROM sections_wiki ORDER BY id ASC');
   // exécution de la requête
   $req->execute();
 	//création et renvoi de la variable

@@ -48,6 +48,10 @@ else{
 		include_once('controleur/wiki/mainwiki.php');
 		break;
 
+		case 'pagewiki':
+		include_once('controleur/wiki/page_articles.php');
+		break;
+
 		// Forums
 		case 'mainforums':
 		include_once('controleur/forums/index.php');

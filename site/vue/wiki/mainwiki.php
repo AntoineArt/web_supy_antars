@@ -21,25 +21,18 @@
 			<?php include('vue/components/header.php'); ?>
 
 			<?php /*=====NAVIGATION=====*/ ?>
-			<?php include('./vue/components/navigation.php'); ?>
+			<?php include('vue/components/navigation.php'); ?>
 
 			<?php /*=====MAIN=====*/ ?>
-			<?php if(!isset($_GET['id_section_wiki'])){ ?>
-				<h1 class="titre">WikiHub</h1>
-				<div id="choix_section">
-					<?php foreach ($sections as $section): ?>
-						<h2><a href="controleur/wiki/page_articles?id_section_wiki=<?php echo $section['id'];?>"> <?php echo $section['description']; ?></a></h2>
-					<?php endforeach; ?>
-				</div>
-			<?php }
-
-			else{
-
-			} ?>
-
+			<h1 class="titre">WikiHub</h1>
+			<div id="choix_section">
+				<?php foreach ($sections as $section): ?>
+					<h2><a href="_main.php?section=pagewiki&amp;id_section_wiki=<?php echo $section['id'];?>"> <?php echo $section['description']; ?></a></h2>
+				<?php endforeach; ?>
+			</div>
 
 			<?php /*=====FOOTER=====*/ ?>
-			<?php include('./vue/components/footer.php'); ?>
+			<?php include('vue/components/footer.php'); ?>
 		</div>
 	</body>
 </html>
