@@ -15,7 +15,7 @@ session_start();
 unset($_SESSION['error']);
 include_once('controleur/fonctions/secure.php');
 include_once('controleur/identification/autoconnect.php');
-include_once('controleur/identification/maj_session.php'); // On remet à jour les parametres de session 
+include_once('controleur/identification/maj_session.php'); // On remet à jour les parametres de session
 
 // On regarde d'abord si l'utilisateur est nouveau
 if(!isset($_GET['section'])){
@@ -41,6 +41,7 @@ else{
 
 		// Articles
 		case 'mainarticles':
+		include_once('controleur/articles/articles.php');
 		break;
 
 		// Wiki
