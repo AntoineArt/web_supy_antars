@@ -2,11 +2,14 @@
 /*
 	Auteur: Frapiccini Benoît
 	Ce code correspond à la barre de navigation du site.
-	Il s'adapte en fonction de la connection (ou non) de l'utilisateur du site.
+	Il s'adapte en fonction de la connexion (ou non) de l'utilisateur du site.
 */
 ?>
 
 <nav>
+	<div id='navigation_onglets'>
+
+	<p><a href='./_main.php?section=mainplayground' title='Pour en apprendre plus sur ce monde fantastique !'>PLAY!</a></p>
 	<p><a href='./_main.php?section=mainwiki' title='Pour en apprendre plus sur ce monde fantastique !'>Wiki</a></p>
 	<p><a href='./_main.php?section=mainforums' title="Pour partager vos expériences avec d'autres aventuriers !">Forums</a></p>
 
@@ -27,5 +30,5 @@
 		<?php
 	}
 	?>
-
+	</div>
 </nav>

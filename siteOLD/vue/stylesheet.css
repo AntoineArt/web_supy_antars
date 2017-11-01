@@ -1,0 +1,274 @@
+/*
+    Auteurs: Frapiccini Benoît & Artillan Antoine
+    */
+
+/* index:
+- general
+- header
+- navigation
+- main
+- footer
+- formulaires
+- news
+- wiki
+- forum
+*/
+
+/* =====GENERAL===== */
+@font-face{
+    font-family: 'FiraPolice';
+    src:url('../ressources/police/Fira/FiraSans-Book.otf');
+}
+
+@font-face {
+    font-family: 'HunterPolice';
+    src: url('../ressources/police/Mechanization.ttf');
+}
+
+body{
+    background: rgb(160,160,160);
+    font-family: 'FiraPolice';
+    color: rgb(255,255,255);
+    text-align: justify;
+}
+
+h1, h2{
+	color: rgb(255, 192, 32);
+    font-weight: bold;
+    text-align: left;
+}
+
+a{
+    text-decoration: none; /*Supprime le soulignement*/
+    color: rgb(255, 192, 32);
+}
+
+a:hover{
+    text-decoration: none; /*Supprime le soulignement*/
+    color: rgb(255,255,255);
+    /*border-bottom: 3px solid rgb(255, 255, 255);*/
+}
+
+strong{
+    color: rgb(255, 192, 32);
+}
+
+.error{
+    color: rgb(255, 25, 25);
+}
+
+#page{
+    width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+		align-content: center;
+    text-align: center;
+}
+
+/* =====HEADER===== */
+header{
+    /*Image trop grande, il faut la centrer*/
+    background: url('../ressources/images/bannière.jpg') repeat-x bottom;
+    background-size:cover;
+    margin: 10px 5px;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px black;
+    padding: 10px;
+}
+
+header a{
+    font-family: 'HunterPolice';
+    font-size: 1.5em;
+    color: rgb(255,25,25);
+    text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.75);
+
+    width: 970px;
+    display: block;
+    text-align: center;
+}
+
+header a:hover{
+    color: rgb(255,25,25);
+    text-shadow: 0px 0px 7px rgba(0, 0, 0, 1.75);
+}
+
+/* =====NAVIGATION===== */
+nav{
+    display: flex;
+    justify-content: space-around;
+
+    border-radius: 10px;
+    padding: 10px;
+    margin: 15px 5px 25px 5px;
+    background-color: rgb(140, 140, 140);
+    box-shadow: 0px 4px 6px black;
+}
+
+
+nav a{
+    font-size: 1.3em;
+    text-decoration: none; /*Supprime le soulignement*/
+}
+
+/* =====MAIN===== */
+section{
+    display: flex;
+    justify-content: space-around;
+}
+
+article, aside{
+    text-align: justify;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 5px;
+    background-color: rgb(140, 140, 140);
+    box-shadow: 0px 4px 6px black;
+
+    font-size: 1em;
+    color: white;
+}
+
+article{
+    flex: 5;
+}
+
+article p{
+    float: right;
+    padding-right: 30px;
+}
+
+aside{
+    flex: 1;
+    text-align:left;
+}
+
+aside p{
+    float: right;
+}
+
+/* =====FOOTER===== */
+footer{
+    display: flex;
+    text-align:center;
+		align-self: center;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+footer h2{
+	text-align: center;
+}
+
+/* =====NEWS===== */
+
+/* =====FORMULAIRES===== */
+form{
+    text-align: left;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 5px;
+}
+
+/* =====WIKI===== */
+
+#choix_section{
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-content:center;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: left;
+
+}
+
+#choix_section h2{
+	margin: 10px 5px;
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 6px black;
+	width: 300px;
+	background-color: rgb(140, 140, 140);
+	text-align: center;
+}
+
+/* =====FORUM===== */
+#forum, #commentaires{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.billet{
+    width: 480px;
+    height: 250px;
+    border-radius: 0px;
+    padding: 5px;
+    margin: 5px 5px;
+    background-color: rgb(140, 140, 140);
+    box-shadow: 0px 4px 6px black;
+}
+
+.billet p{
+    width: 480px;
+    height: 150px;
+    word-wrap: break-word;
+    /*Origine du bug des barres blanches si passé en "scroll"; Utilisation de "hidden" à la place*/
+    overflow: hidden;
+}
+
+.nom_billet{
+    text-transform: uppercase;
+}
+
+#forum_creer{
+    border-radius: 10px;
+    padding: 10px;
+    align-self: center;
+    margin: 15px 5px;
+    background-color: rgb(140, 140, 140);
+    box-shadow: 0px 4px 6px black;
+}
+
+.commentaire{
+	display: flex;
+	flex-flow:row;
+	width: 1000px;
+	padding: 10px;
+    margin: 5px 5px;
+	background-color: rgb(140, 140, 140);
+	box-shadow: 0px 4px 6px black;
+    word-wrap: break-word;
+}
+
+.commentaire_contenu{
+	width: inherit;
+	word-wrap: break-word;
+	text-align: justify;
+	overflow: hidden;
+	margin-left: 10px;
+}
+
+.commentaire_infos{
+	text-align:left;
+	margin-left: 10px;
+}
+
+#avatar{
+	width:50px;
+}
+
+#commentaire_creer{
+    border-radius: 10px;
+    padding: 10px;
+	align-self: center;
+    margin: 15px 5px;
+    background-color: rgb(140, 140, 140);
+    box-shadow: 0px 4px 6px black;
+}
+

@@ -1,274 +1,130 @@
 /*
-    Auteurs: Frapiccini Benoît & Artillan Antoine
-    */
+  Auteurs: Frapiccini Benoît & Artillan Antoine
+
+*/
 
 /* index:
 - general
-- header
-- navigation
-- main
-- footer
-- formulaires
-- news
-- wiki
-- forum
+- mainpage
 */
 
 /* =====GENERAL===== */
-@font-face{
-    font-family: 'FiraPolice';
-    src:url('../ressources/police/Fira/FiraSans-Book.otf');
-}
 
 @font-face {
-    font-family: 'HunterPolice';
-    src: url('../ressources/police/Mechanization.ttf');
+  font-family: 'QSLight';
+  src: url('../ressources/police/Quicksand-Light.ttf');
 }
 
 body{
-    background: rgb(160,160,160);
-    font-family: 'FiraPolice';
-    color: rgb(255,255,255);
-    text-align: justify;
+  /*background: #B2EBF2;*/
+  background: -webkit-gradient(linear, 0% 50%, 50% 0%, from(#FF9800), to(#B2EBF2));
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+  font-family: 'QSLight';
+  color: 212121;
+}
+
+h1, h2, article, p, a{
+  color: #212121;
+  font-weight: bold;
+  text-align: left;
 }
 
 h1, h2{
-	color: rgb(255, 192, 32);
-    font-weight: bold;
-    text-align: left;
+	color: #212121;
+  font-weight: bold;
+  text-align: center;
+}
+
+hr{
+  border: none;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0));
 }
 
 a{
-    text-decoration: none; /*Supprime le soulignement*/
-    color: rgb(255, 192, 32);
+  text-decoration: none; /*Supprime le soulignement*/
 }
 
 a:hover{
-    text-decoration: none; /*Supprime le soulignement*/
-    color: rgb(255,255,255);
-    /*border-bottom: 3px solid rgb(255, 255, 255);*/
+  text-decoration: none; /*Supprime le soulignement*/
+  color: #FF9800;
+  /*border-bottom: 3px solid rgb(255, 255, 255);*/
 }
 
 strong{
-    color: rgb(255, 192, 32);
+  color: #FF9800;
 }
 
 .error{
-    color: rgb(255, 25, 25);
+  color: #d50000;
 }
 
-#page{
-    width: 1000px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-		align-content: center;
-    text-align: center;
+/* =====MAINPAGE===== */
+
+#mainpage{
+  width: auto;
+  margin:auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /*align-item centre par x*/
+  text-align: center;
 }
 
-/* =====HEADER===== */
-header{
-    /*Image trop grande, il faut la centrer*/
-    background: url('../ressources/images/bannière.jpg') repeat-x bottom;
-    background-size:cover;
-    margin: 10px 5px;
-    display: flex;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px black;
-    padding: 10px;
+#main{
+  width: auto;
+  margin:auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; /*align-item centre par x*/
+  text-align: center;
 }
 
-header a{
-    font-family: 'HunterPolice';
-    font-size: 1.5em;
-    color: rgb(255,25,25);
-    text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.75);
-
-    width: 970px;
-    display: block;
-    text-align: center;
-}
-
-header a:hover{
-    color: rgb(255,25,25);
-    text-shadow: 0px 0px 7px rgba(0, 0, 0, 1.75);
-}
-
-/* =====NAVIGATION===== */
-nav{
-    display: flex;
-    justify-content: space-around;
-
-    border-radius: 10px;
-    padding: 10px;
-    margin: 15px 5px 25px 5px;
-    background-color: rgb(140, 140, 140);
-    box-shadow: 0px 4px 6px black;
-}
-
-
-nav a{
-    font-size: 1.3em;
-    text-decoration: none; /*Supprime le soulignement*/
-}
-
-/* =====MAIN===== */
-section{
-    display: flex;
-    justify-content: space-around;
-}
-
-article, aside{
-    text-align: justify;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px 5px;
-    background-color: rgb(140, 140, 140);
-    box-shadow: 0px 4px 6px black;
-
-    font-size: 1em;
-    color: white;
-}
-
-article{
-    flex: 5;
-}
-
-article p{
-    float: right;
-    padding-right: 30px;
-}
-
-aside{
-    flex: 1;
-    text-align:left;
-}
-
-aside p{
-    float: right;
-}
-
-/* =====FOOTER===== */
-footer{
-    display: flex;
-    text-align:center;
-		align-self: center;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-footer h2{
-	text-align: center;
-}
-
-/* =====NEWS===== */
-
-/* =====FORMULAIRES===== */
-form{
-    text-align: left;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px 5px;
-}
-
-/* =====WIKI===== */
-
-#choix_section{
-	margin: auto;
-	display: flex;
-	flex-wrap: wrap;
-	align-content:center;
-	flex-direction: column;
-	justify-content: space-between;
-	text-align: left;
+#main #left{
 
 }
 
-#choix_section h2{
-	margin: 10px 5px;
-	padding: 10px;
-	border-radius: 10px;
-	box-shadow: 0px 4px 6px black;
-	width: 300px;
-	background-color: rgb(140, 140, 140);
-	text-align: center;
+#main #center{
+  width: 360px;
+  background-color: #FFFFFF;
+	align-content: center;
+  text-align: center;
+
+  border-radius: 5px;
+  padding: 25px 0px 25px 0px;
+  margin: 25px 25px 15px 25px;
 }
 
-/* =====FORUM===== */
-#forum, #commentaires{
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    justify-content: space-between;
-    text-align: left;
+#main #right{
+
 }
 
-.billet{
-    width: 480px;
-    height: 250px;
-    border-radius: 0px;
-    padding: 5px;
-    margin: 5px 5px;
-    background-color: rgb(140, 140, 140);
-    box-shadow: 0px 4px 6px black;
+#main #avatar{
+	width:75px;
+  border-radius: 50px;
 }
 
-.billet p{
-    width: 480px;
-    height: 150px;
-    word-wrap: break-word;
-    /*Origine du bug des barres blanches si passé en "scroll"; Utilisation de "hidden" à la place*/
-    overflow: hidden;
+#footer{
+  align-self: center; /* Seul ce bloc sera aligné à la fin */
 }
 
-.nom_billet{
-    text-transform: uppercase;
+.textbox, .submitbutton{
+    padding: 0px 10px 0px 10px;
+    height: 30px;
+    border: 1px solid #BDBDBD;
+    border-color: rgba(0,0,0,.25);
+    background-color: white;
+    font-size: 16px;
+    border-radius: 5px;
 }
 
-#forum_creer{
-    border-radius: 10px;
-    padding: 10px;
-    align-self: center;
-    margin: 15px 5px;
-    background-color: rgb(140, 140, 140);
-    box-shadow: 0px 4px 6px black;
+.textbox{
+  weight: 250px;
 }
 
-.commentaire{
-	display: flex;
-	flex-flow:row;
-	width: 1000px;
-	padding: 10px;
-    margin: 5px 5px;
-	background-color: rgb(140, 140, 140);
-	box-shadow: 0px 4px 6px black;
-    word-wrap: break-word;
+.submitbutton:hover{
+  color: #FF9800;
+  border-color: rgba(255,152,0,.25);
 }
-
-.commentaire_contenu{
-	width: inherit;
-	word-wrap: break-word;
-	text-align: justify;
-	overflow: hidden;
-	margin-left: 10px;
-}
-
-.commentaire_infos{
-	text-align:left;
-	margin-left: 10px;
-}
-
-#avatar{
-	width:50px;
-}
-
-#commentaire_creer{
-    border-radius: 10px;
-    padding: 10px;
-	align-self: center;
-    margin: 15px 5px;
-    background-color: rgb(140, 140, 140);
-    box-shadow: 0px 4px 6px black;
-}
-

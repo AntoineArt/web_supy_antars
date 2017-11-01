@@ -12,10 +12,10 @@
 */
 
 session_start();
-$_SESSION['error']="<br>"; // Afin de respecter les tailles des boites
+unset($_SESSION['error']);
 include_once('controleur/fonctions/secure.php');
-include_once('controleur/compte/autoconnect.php');
-include_once('controleur/compte/maj_session.php'); // On remet à jour les parametres de session
+include_once('controleur/identification/autoconnect.php');
+include_once('controleur/identification/maj_session.php'); // On remet à jour les parametres de session
 
 // On regarde d'abord si l'utilisateur est nouveau
 if(!isset($_GET['section'])){
@@ -36,7 +36,12 @@ else{
 	switch ($section){
 		// Mainpage
 		case 'mainpage':
-		include_once('controleur/mainpage/mainpage.php');
+		include_once('vue/mainpage/mainpage.php');
+		break;
+
+		// Articles
+		case 'mainarticles':
+		include_once('controleur/articles/articles.php');
 		break;
 
 		// Wiki
@@ -69,20 +74,22 @@ else{
 		include_once('controleur/forums/commentaires_utilisateur.php');
 		break;
 
-		// Compte
+		// Identification
 		case 'profil':
-		include_once('controleur/compte/profil.php');
+		include_once('controleur/identification/profil.php');
+		break;
+
+		case 'connexion':
+		include_once('controleur/identification/connexion.php');
 		break;
 
 		case 'deconnexion':
-		include_once('controleur/compte/deconnexion.php');
+		include_once('controleur/identification/deconnexion.php');
 		break;
 
 		case 'inscription':
-		include_once('controleur/compte/inscription.php');
+		include_once('controleur/identification/inscription.php');
 		break;
-
-		// Playground
 
 		// Rip
 		default:
