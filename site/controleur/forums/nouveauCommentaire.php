@@ -9,7 +9,7 @@
 //On vérifie qu'on est bien connecté
 if(!isset($_SESSION['pseudo'])){
 	$_SESSION['dynamic_section'] = 'nouveau_commentaire';
-	header('location: _main.php?section=connexion');
+	header('location: _main.php?section=mainpage');
 	exit();
 }
 // Si le formulaire html a été rempli
@@ -31,7 +31,7 @@ elseif(isset($_POST['contenu']) AND isset($_SESSION['pseudo'])){
 		$_SESSION['id_billet'] = $id_billet;
 		$_SESSION['titre_billet'] = secure_data($_GET['titre']); // /!\ à vérifier
 	}
-	header('location: _main.php?section=commentaires');
+	header('location: _main.php?section=commentairesBillet');
 	exit();
 }
 else{

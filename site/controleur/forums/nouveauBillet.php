@@ -7,7 +7,7 @@
 //On vérifie qu'on est bien connecté
 if(!isset($_SESSION['pseudo'])){
 	$_SESSION['dynamic_section'] = 'nouveau_billet';
-	header('location: _main.php?section=connexion');
+	header('location: _main.php?section=mainpage');
 	exit();
 }
 // Si le formulaire html a été rempli
