@@ -16,13 +16,6 @@ Ce code correspond à la page d'inscription.
 <body>
 	<div id='page'>
 
-		<?php /*=====HEADER=====*/ ?>
-		<?php include('vue/components/header.php'); ?>
-
-		<?php /*=====NAVIGATION=====*/ ?>
-		<?php include('vue/components/navigation.php'); ?>
-
-
 		<?php /*=====MAIN=====*/ ?>
 		<section>
 			<div id='inscription'>

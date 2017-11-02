@@ -18,12 +18,6 @@
 <body>
 	<div id='page'>
 
-		<?php /*=====HEADER=====*/ ?>
-		<?php include('vue/components/header.php'); ?>
-
-		<?php /*=====NAVIGATION=====*/ ?>
-		<?php include('./vue/components/navigation.php'); ?>
-
 		<?php /*=====MAIN=====*/ ?>
 		<div id='page_com_utilisateur'>
 		<h2 class=nom_billet>Liste des commentaires : <?php echo $pseudo; ?></h2>
@@ -37,7 +31,7 @@
 					</div>
 					<hr />
 					<div class='commentaire_contenu'><?php echo nl2br($commentaire['contenu']); ?></div>
-					<a href="_main.php?section=commentaires&amp;billet=<?php echo $commentaire['id_billet'];?>&amp;titre=<?php echo $commentaire['titre_billet'];?>#<?php echo $commentaire['id'];?>">Voir la discussion</a>
+					<a href="_main.php?section=commentairesBillet&amp;billet=<?php echo $commentaire['id_billet'];?>&amp;titre=<?php echo $commentaire['titre_billet'];?>#<?php echo $commentaire['id'];?>">Voir la discussion</a>
 				</div>
 				<?php	}?>
 			</div>

@@ -16,13 +16,6 @@
 <body>
 	<div id='page'>
 
-		<?php /*=====HEADER=====*/ ?>
-		<?php include('vue/components/header.php'); ?>
-
-		<?php /*=====NAVIGATION=====*/ ?>
-		<?php include('vue/components/navigation.php'); ?>
-
-
 		<?php /*=====MAIN=====*/ ?>
 		<section>
 			<div id='profil'>
@@ -46,7 +39,7 @@
 					<h2>Changer d'adresse mail:</h2>
 					<p> Nouvelle adresse <input type='text' name='email' /> <input type='submit' value='Valider' /> </p>
 				</form>
-				<form action='_main.php?section=profil' method='post' enctype="multipart/form-data">	
+				<form action='_main.php?section=profil' method='post' enctype="multipart/form-data">
 					<h2>Changer d'avatar:</h2>
 					<p>(Le changement peut prendre quelques minutes à être effectif)</p>
      				<input type="hidden" name="MAX_FILE_SIZE" value="200000">

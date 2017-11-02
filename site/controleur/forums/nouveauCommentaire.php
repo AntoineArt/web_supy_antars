@@ -36,5 +36,5 @@ elseif(isset($_POST['contenu']) AND isset($_SESSION['pseudo'])){
 }
 else{
 	$_SESSION['dynamic_section'] = 'nouveau_commentaire';
-	include_once('vue/forums/nouveau_commentaire.php');
+	include_once('vue/forums/nouveauCommentaire.php');
 }

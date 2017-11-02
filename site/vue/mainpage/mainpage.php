@@ -15,6 +15,7 @@
 
 <body id='mainpage'>
 
+	<?php /*=====MAIN=====*/ ?>
 	<div id='main'>
 
 		<?php if(!isset($_SESSION['pseudo'])){
@@ -22,8 +23,8 @@
 
 			<div id='center'>
 				<header>
-					<img id='avatar' src="./ressources/images/mainpage.jpeg" />
 					<h1>Mechs VS Wartz</h1>
+					<img id='avatar' src="./ressources/images/mainpage.jpeg" />
 				</header>
 
 				<br><hr/ ><br>
@@ -44,8 +45,8 @@
 					</div>
 					<br>
 					<br>
-					<div class='button'>
-						<input class='submitbutton' type='submit' value='Valider' />
+					<div class='submitbutton'>
+						<input class='button' type='submit' value='Valider' />
 					</div>
 					<br>
 				</form>
@@ -60,27 +61,36 @@
 			//L'utilisateur est connecté ; il voit l'ensemble de l'interface ?>
 
 			<div id='left'>
-				<nav id='navigation'>
+				<div id='navigation'>
 					<a href='./_main.php?section=mainwiki' title='Pour en apprendre plus sur ce monde fantastique !'>Wiki</a>
+					<hr />
 					<a href='./_main.php?section=mainforums' title="Pour partager vos expériences avec d'autres aventuriers !">Forums</a>
+					<hr />
 					<a href='./_main.php?section=mainplayground' title='Pour en apprendre plus sur ce monde fantastique !'>Contacts</a>
-				</nav>
+					<hr />
+					<a href='_main.php?section=profil'>Profil</a>
+				</div>
 
 				<div id='extraitsForums'>
+					aze
 				</div>
 			</div>
 
 			<div id='center'>
 				<header>
-					<img id='avatar' src='./ressources/images/mainpageAvatar.jpeg'/>
 					<h1>Mechs VS Wartz</h1>
+					<img id='avatar' src='./ressources/avatars/<?php echo($_SESSION['pseudo']);?>.jpeg'/>
 				</header>
 
-				<hr/ >
+				<br><hr/ ><br>
 
-				<div id=''>
-					<a href='_main.php?section=playground'>Enter Playground</a>
+				<h2>Bienvenue, <?php echo($_SESSION['pseudo']);?></h2>
+				<div id='playbutton'>
+					<a href='_main.php?section=playground'>Play</a>
 				</div>
+
+				<hr />
+
 				<div id='deconnexion'>
 					<a href='_main.php?section=deconnexion'>Déconnexion</a>
 				</div>
@@ -100,9 +110,8 @@
 
 	</div>
 
-	<footer id="footer">
-		<div id="copyright">&copy; Supytalp & Antar_s</div>
-	</footer>
+	<?php /*=====FOOTER=====*/ ?>
+	<?php include('./vue/components/footer.php'); ?>
 
 </body>
 </html>

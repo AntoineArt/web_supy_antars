@@ -72,18 +72,54 @@ strong{
   text-align: center;
 }
 
+#main #avatar{
+	width:75px;
+  border-radius: 15px;
+}
+
 #main{
   width: auto;
   margin:auto;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center; /*align-item centre par x*/
+  justify-content: center; /*justify-content centre par x*/
+  align-items: flex-start; /*align-item centre par y*/
   text-align: center;
 }
 
-#main #left{
+.textbox, .button{
+  padding: 0px 10px 0px 10px;
+  height: 30px;
+  border: 1px solid #BDBDBD;
+  border-color: rgba(0,0,0,.25);
+  background-color: white;
+  font-size: 16px;
+  border-radius: 5px;
+}
 
+.textbox{
+  weight: 250px;
+}
+
+.playbutton{
+  width: auto;
+  height: 200px;
+  border-radius: 1000;
+}
+
+.button:hover{
+  color: #FF9800;
+  border-color: rgba(255,152,0,.25);
+}
+
+#main #left{
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  text-align: center;
+
+  margin: 25px 15px 15px 0px;
 }
 
 #main #center{
@@ -94,37 +130,47 @@ strong{
 
   border-radius: 5px;
   padding: 25px 0px 25px 0px;
-  margin: 25px 25px 15px 25px;
+  margin: 25px 15px 15px 15px;
 }
 
 #main #right{
+  width: 360px;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
 
+  border-radius: 5px;
+  padding: 25px 0px 25px 0px;
+  margin: 25px 0px 15px 15px;
 }
 
-#main #avatar{
-	width:75px;
-  border-radius: 50px;
+#navigation{
+  width: auto;
+  background-color: #FFFFFF;
+  align-items: center;
+  text-align: center;
+
+  border-radius: 5px;
+  padding: 25px 0px 25px 0px;
+
+  margin: 0px 0px 30px 0px;
+}
+
+#extraitsForums{
+width: auto;
+background-color: #FFFFFF;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+
+border-radius: 5px;
+padding: 25px 0px 25px 0px;
 }
 
 #footer{
   align-self: center; /* Seul ce bloc sera aligné à la fin */
-}
-
-.textbox, .submitbutton{
-    padding: 0px 10px 0px 10px;
-    height: 30px;
-    border: 1px solid #BDBDBD;
-    border-color: rgba(0,0,0,.25);
-    background-color: white;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-.textbox{
-  weight: 250px;
-}
-
-.submitbutton:hover{
-  color: #FF9800;
-  border-color: rgba(255,152,0,.25);
 }

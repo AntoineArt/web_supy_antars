@@ -21,4 +21,4 @@ foreach ($commentaires as $com) {
 
 // On affiche la page (vue)
 $_SESSION['dynamic_section'] = 'commentaires';
-include_once("vue/forums/commentaires_utilisateur.php");
+include_once("vue/forums/commentairesUtilisateur.php");

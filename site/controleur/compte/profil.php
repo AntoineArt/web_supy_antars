@@ -1,9 +1,9 @@
-<?php 
+<?php
 /*
 	Auteur: Frapiccini Benoît
 	Ce programme permet la connextion d'un utilisateur à sa page de profil.
 	En cas de moficfications, il vérifie les informations et met à jour la base de donnée.
-	
+
 	/!\ L'identifiant est unique pour chaque utilisateur !
 */
 
@@ -101,4 +101,4 @@ if(isset($_SESSION['pseudo']) AND (isset($_POST['pseudo']) OR (isset($_POST['mdp
 	}
 }
 // On affiche toujours la page
-include_once('vue/identification/profil.php');
+include_once('vue/compte/profil.php');

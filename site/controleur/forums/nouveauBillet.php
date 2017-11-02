@@ -34,5 +34,5 @@ elseif(isset($_POST['titre']) AND isset($_POST['contenu']) AND isset($_SESSION['
 }
 else{
 	$_SESSION['dynamic_section'] = 'nouveau_billet';
-	include_once('vue/forums/nouveau_billet.php');
+	include_once('vue/forums/nouveauBillet.php');
 }

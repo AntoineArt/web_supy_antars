@@ -18,12 +18,6 @@
 <body>
 	<div id="page">
 
-		<?php /*=====HEADER=====*/ ?>
-		<?php include('vue/components/header.php'); ?>
-
-		<?php /*=====NAVIGATION=====*/ ?>
-		<?php include('./vue/components/navigation.php'); ?>
-
 		<?php /*=====MAIN=====*/ ?>
 
 		<h2 class=nom_billet><?php echo $_SESSION['titre_billet']; ?></h2>
@@ -38,7 +32,7 @@
 					</div>
 
 					<div class='commentaire_infos'>
-						Par <a href="_main.php?section=commentaires_utilisateur&amp;pseudo=<?php echo $commentaire['auteur'];?>"><strong><?php echo $commentaire['auteur'];?></strong></a>
+						Par <a href="_main.php?section=commentairesUtilisateur&amp;pseudo=<?php echo $commentaire['auteur'];?>"><strong><?php echo $commentaire['auteur'];?></strong></a>
 						<br /><?php $date=new DateTime($commentaire['date_fr']); echo $date->format('\l\e d-m-Y'); echo ('<br />'); echo $date->format('à H:i'); ?>
 					</div>
 
@@ -49,11 +43,11 @@
 			</div>
 
 			<?php	}?>
-			
+
 	</div>
 
 	<div id='commentaire_creer'>
-		<a href="_main.php?section=nouveau_commentaire&amp;billet=<?php echo $_SESSION['id_billet']; ?>&amp;titre=<?php echo $_SESSION['titre_billet'];?>">Nouveau commentaire</a>
+		<a href="_main.php?section=nouveauCommentaire&amp;billet=<?php echo $_SESSION['id_billet']; ?>&amp;titre=<?php echo $_SESSION['titre_billet'];?>">Nouveau commentaire</a>
 	</div>
 
 	<?php /*=====FOOTER=====*/ ?>

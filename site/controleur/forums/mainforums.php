@@ -21,4 +21,4 @@ foreach($billets as $billet){
 
 // On affiche la page (vue)
 $_SESSION['dynamic_section'] = 'mainforums';
-include_once('vue/forums/index.php');
+include_once('vue/forums/mainforums.php');

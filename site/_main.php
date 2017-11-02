@@ -50,23 +50,23 @@ else{
 
 		// Forums
 		case 'mainforums':
-		include_once('controleur/forums/index.php');
+		include_once('controleur/forums/mainforums.php');
 		break;
 
-		case 'nouveau_billet':
-		include_once('controleur/forums/nouveau_billet.php');
+		case 'nouveauBillet':
+		include_once('controleur/forums/nouveauBillet.php');
 		break;
 
-		case 'commentaires':
-		include_once('controleur/forums/commentaires.php');
+		case 'commentairesBillet':
+		include_once('controleur/forums/commentairesBillet.php');
 		break;
 
-		case 'nouveau_commentaire':
-		include_once('controleur/forums/nouveau_commentaire.php');
+		case 'nouveauCommentaire':
+		include_once('controleur/forums/nouveauCommentaire.php');
 		break;
 
-		case 'commentaires_utilisateur':
-		include_once('controleur/forums/commentaires_utilisateur.php');
+		case 'commentairesUtilisateur':
+		include_once('controleur/forums/commentairesUtilisateur.php');
 		break;
 
 		// Compte
